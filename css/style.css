@@ -1,0 +1,97 @@
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f7f7f7;
+}
+
+header {
+  text-align: center;
+  padding: 1rem 0;
+}
+
+button {
+  border: none;
+  transition: font-size 0.3s ease;
+  background-color: #f7f7f7;
+}
+
+button:hover {
+  font-size: 1.2em;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.content {
+  padding: 2rem;
+  display: none;
+  overflow: hidden;
+  height: 0;
+  transition: height 0.5s ease, opacity 0.5s ease; /* Добавлена анимация opacity */
+}
+
+.content.active {
+  display: block;
+  height: auto;
+}
+
+.content p,
+.content h2 {
+  opacity: 0; /* Устанавливаем начальное значение прозрачности */
+  transition: opacity 0.5s ease; /* Добавляем анимацию opacity */
+}
+
+.content.active p,
+.content.active h2 {
+  opacity: 1; /* Устанавливаем конечное значение прозрачности */
+}
+
+#insta-button {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+#insta-button img {
+
+  width: 30px; /* Adjust as needed */
+  height: 23px; /* Adjust as needed */
+
+.image-square {
+  width: 200px;
+  height: 200px;
+  background-color: #ffffff;
+  background-size: cover;
+  background-position: center;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem 0;
+  background-color: #f7f7f7;
+}
+
+footer a {
+  text-decoration: none;
+}
+
+.fade-in {
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}}
