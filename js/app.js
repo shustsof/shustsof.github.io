@@ -82,48 +82,6 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   }
 
-  // Создание белого квадрата с изображением
-  function createImageSquare(imageSrc) {
-    var square = document.createElement('div');
-    square.className = 'image-square';
-    square.style.backgroundImage = 'url(' + imageSrc + ')';
-    square.onclick = function() {
-      showModal(imageSrc);
-    };
-    return square;
-  }
 
-  // Добавление изображений в указанную секцию
-  function addImagesToSection(sectionId, imageSources) {
-    var section = document.getElementById(sectionId);
-    imageSources.forEach(function(imageSrc) {
-      var square = createImageSquare(imageSrc);
-      section.appendChild(square);
-    });
-  }
-
-  // Пример загрузки изображений из JSON файла
-  var sketchImages = [
-    'img/sketch1.jpg',
-    'img/sketch2.jpg',
-    'img/sketch3.jpg'
-  ];
-
-  var animationImages = [
-    'img/animation1.gif',
-    'img/animation2.gif',
-    'img/animation3.gif'
-  ];
-
-  var aboutImages = [
-    'img/about1.jpg',
-    'img/about2.jpg',
-    'img/about3.jpg'
-  ];
-
-  // Добавление изображений в соответствующие секции
-  addImagesToSection('sketches-content', sketchImages);
-  addImagesToSection('animations-content', animationImages);
-  addImagesToSection('about-content', aboutImages);
 });
 
