@@ -66,7 +66,7 @@ nav {
 /* Add styles for Instagram button */
 .instagram-button {
   position: relative;
-  top: 120px;
+  top: 80px;
   left: -20px;
   background: none;
   border: none;
@@ -74,12 +74,14 @@ nav {
 }
 
 .instagram-button img {
-  width: 32px; /* Adjust as needed */
-  height: 25px; /* Adjust as needed */
+  width: 31px; /* Adjust as needed */
+  height: 21px; /* Adjust as needed */
 }
 
 
 .card {
+  margin: 20px;
+  padding: 10px;
   align-items: center;
   background-color: #fff;
   border-radius: 8px;
@@ -92,6 +94,13 @@ nav {
   text-align: center;
   transition: box-shadow .3s ease-in-out;
   width: 14rem;
+}
+
+.card img,
+.card video {
+  /*margin-top: 10%;*/
+  max-width: 90%; /* Максимальная ширина изображения/видео будет равна ширине карточки */
+  max-height: 90%; /* Максимальная высота изображения/видео будет равна высоте карточки */
 }
 
 .open-card-button {

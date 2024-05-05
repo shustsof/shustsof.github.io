@@ -90,5 +90,68 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
 
-});
+  // Чтение JSON файла
+  fetch('images.json')
+      .then(response => response.json())
+      .then(data => {
+        // Перебираем каждую запись в JSON
+        Object.keys(data).forEach(key => {
+          const item = data[key];
+
+          // Создаем элементы HTML
+          const card = document.createElement('div');
+          card.classList.add('card');
+
+          let content; // Для хранения секции, куда будет добавлена карточка
+          let openButton; // Для хранения кнопки arrow
+
+          // Создаем кнопку arrow
+          openButton = document.createElement('button');
+          openButton.classList.add('open-card-button');
+          openButton.innerHTML = '<img src="img/arrow-icon.png" alt="open Card">';
+
+          // Определяем категорию и создаем соответствующий элемент
+          if (item.category === 'animation') {
+            content = document.getElementById('animations-content');
+            const video = document.createElement('video');
+            video.src = item.img;
+            card.appendChild(video);
+          } else if (item.category === 'sketch') {
+            content = document.getElementById('sketches-content');
+            const image = document.createElement('img');
+            image.src = item.img;
+            card.appendChild(image);
+          } else {
+            // Добавьте обработку других категорий по необходимости
+            return; // Пропускаем записи с неопределенными категориями
+          }
+
+          // Создаем кнопку Instagram
+          const instagramButton = document.createElement('button');
+          instagramButton.classList.add('instagram-button');
+          const instagramLink = document.createElement('a');
+          instagramLink.href = item.insta;
+          instagramLink.target = '_blank';
+          const instagramImage = document.createElement('img');
+          instagramImage.src = 'img/INSTA.png';
+          instagramImage.alt = 'Instagram';
+          instagramLink.appendChild(instagramImage);
+          instagramButton.appendChild(instagramLink);
+
+          // Создаем описание
+          const description = document.createElement('p');
+          description.textContent = item.description;
+
+          // Добавляем элементы в карточку
+          card.appendChild(openButton); // Добавляем кнопку arrow
+          card.appendChild(instagramButton);
+          card.appendChild(description);
+
+          // Добавляем карточку в соответствующую секцию
+          content.appendChild(card);
+        });
+      })
+      .catch(error => console.error('Error fetching JSON:', error));});
+
+
 
