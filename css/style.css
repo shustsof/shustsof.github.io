@@ -63,6 +63,21 @@ nav {
   width: 30px; /* Adjust as needed */
   height: 23px; /* Adjust as needed */
 }
+/* Add styles for Instagram button */
+.instagram-button {
+  position: relative;
+  top: 120px;
+  left: -20px;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.instagram-button img {
+  width: 32px; /* Adjust as needed */
+  height: 25px; /* Adjust as needed */
+}
+
 
 .card {
   align-items: center;
@@ -78,6 +93,44 @@ nav {
   transition: box-shadow .3s ease-in-out;
   width: 14rem;
 }
+
+.open-card-button {
+  position: absolute;
+  top: 474px;
+  left: 160px;
+  background: none;
+  border: none;
+  padding: 0;
+
+}
+
+.open-card-button img {
+  width: 25px;
+  height: 25px;
+}
+
+/* Стили для описания карточки */
+.card-details {
+  position: fixed; /* Фиксированное положение для показа поверх остального контента */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 2; /* Отобразить поверх всего */
+  display: none; /* Скрыть по умолчанию */
+}
+
+.card-details img {
+  max-width: 300px; /* Максимальная ширина изображения */
+}
+
+.card-details p {
+  margin-top: 10px;
+}
+
 
 .image-square {
   width: 200px;

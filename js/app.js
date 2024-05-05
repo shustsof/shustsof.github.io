@@ -1,25 +1,32 @@
 document.addEventListener("DOMContentLoaded", function() {
   const sketchesButton = document.getElementById("sketches-button");
+  const artsButton = document.getElementById("arts-button");
   const animationsButton = document.getElementById("animations-button");
   const aboutButton = document.getElementById("about-button");
 
   const sketchesContent = document.getElementById("sketches-content");
+  const artsContent = document.getElementById("arts-content");
   const animationsContent = document.getElementById("animations-content");
   const aboutContent = document.getElementById("about-content");
 
   sketchesButton.addEventListener("click", function() {
     toggleContent(sketchesContent);
-    hideContent([animationsContent, aboutContent]);
+    hideContent([animationsContent, artsContent, aboutContent]);
+  });
+
+  artsButton.addEventListener("click", function() {
+    toggleContent(artsContent);
+    hideContent([sketchesContent, animationsContent, aboutContent]);
   });
 
   animationsButton.addEventListener("click", function() {
     toggleContent(animationsContent);
-    hideContent([sketchesContent, aboutContent]);
+    hideContent([sketchesContent, artsContent, aboutContent]);
   });
 
   aboutButton.addEventListener("click", function() {
     toggleContent(aboutContent);
-    hideContent([sketchesContent, animationsContent]);
+    hideContent([sketchesContent, animationsContent, artsContent]);
   });
 
   function toggleContent(content) {
@@ -72,10 +79,10 @@ document.addEventListener("DOMContentLoaded", function() {
   setInterval(changeLanguage, 3000); // Изменяем язык каждые 3 секунды
 
   function hideContent(contents) {
+    // Function to hide content
     contents.forEach(content => {
       content.classList.remove("active");
       content.style.height = "0";
-      // Для каждого параграфа и заголовка в контенте устанавливаем opacity в 0, чтобы они исчезли плавно
       content.querySelectorAll("p, h2").forEach(element => {
         element.style.opacity = 0;
       });
