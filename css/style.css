@@ -1,3 +1,5 @@
+
+
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
@@ -173,3 +175,15 @@ footer a {
     opacity: 1;
   }
 }
+#upload-arrow {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 9999; /* Устанавливаем выше других элементов */
+}
+
+#upload-arrow img {
+  width: 23px;
+  height: 23px;
+}
+

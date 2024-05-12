@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload Page</title>
+    <link rel="shortcut icon" href="img/png-transparent-cat-computer-icons-dog-pet-cat-cat-like-mammal-animals-text.png">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/app.js"></script>
+    <script src="js/jquery-3.7.1.js"></script>
+
+</head>
+
+
+
+<body>
+
+<header>
+    <h1 id="portfolio-header">Portfolio</h1>
+    <p id="author">Sofiia Shustova</p> <!-- Добавлен параграф с вашим именем -->
+    <button id="insta-button">
+        <a id="insta" href="https://www.instagram.com/eericssonn/" target="_blank">
+            <img src="img/INSTA.png" alt="Instagram">
+        </a>
+    </button>
+</header>
+
+<h1>Update portfolio</h1>
+<form id="upload-form" action method="post">
+
+    <label for="image">Image:</label><br>
+    <input type="file" id="image" name="image" accept="image/*"><br><br>
+
+    <label for="instagram-link">Instagram Link:</label><br>
+    <input type="text" id="instagram-link" name="instagram-link"><br><br>
+
+    <label for="description">Description:</label><br>
+    <textarea id="description" name="description" rows="4" cols="50"></textarea><br><br>
+
+    <label for="category">Category:</label><br>
+    <select id="category" name="category">
+        <option value="sketch">Sketch</option>
+        <option value="art">Art</option>
+        <option value="animation">Animation</option>
+    </select><br><br>
+
+    <button type="submit">Submit</button>
+</form>
+
+<script>
+    document.getElementById("upload-form").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        // Get form data
+        const formData = new FormData(this);
+
+        // Convert formData to JSON
+        const jsonObject = {};
+        formData.forEach((value, key) => {
+            jsonObject[key] = value;
+        });
+        const jsonData = JSON.stringify(jsonObject);
+
+        // Send JSON data to server or do further processing
+        console.log(jsonData);
+
+        // For demonstration purposes, redirect back to index.html
+        window.location.href = "index.html";
+    });
+</script>
+</body>
+</html>
