@@ -38,17 +38,24 @@ setInterval(changeLanguage, 3000); // Изменяем язык каждые 3 �
 
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.querySelector('form');
+    const fileInput = document.getElementById('images');
+
+    // Trigger file input click event when "Update" button is clicked
+    document.getElementById('update_button').addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent default button behavior
+        fileInput.click(); // Trigger file input click event
+    });
 
     form.addEventListener('submit', function (event) {
         event.preventDefault(); // Prevent default form submission
 
         // Get form values
-        const images = document.getElementById('images').files;
         const insta_link = document.getElementById('insta_link').value;
         const description = document.getElementById('description').value;
         const category = document.getElementById('category').value;
 
         // Convert files to base64 strings
+        const images = fileInput.files;
         const promises = Array.from(images).map(file => {
             return new Promise((resolve, reject) => {
                 const reader = new FileReader();
@@ -91,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 .then(() => {
                     // Optionally, you can redirect the user to another page or display a success message
                     // window.location.href = 'success.html';
-                    // alert('Portfolio updated successfully!');
+                    alert('Portfolio updated successfully!');
                 })
                 .catch(error => console.error('Error:', error));
         });
