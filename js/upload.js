@@ -7,7 +7,6 @@ const languages = [
     { code: "ja", text: "ポートフォリオ\nショフィアシュストワ" }, // Японский
     { code: "de", text: "Portfolio\nSofia Schustowa" }, // Немецкий
     { code: "zh", text: "投资组合\n索菲亚舒斯托娃" } // Китайский
-
 ];
 const header = document.getElementById("portfolio-header");
 const author = document.getElementById("author"); // Получаем параграф с именем
@@ -41,9 +40,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const fileInput = document.getElementById('images');
 
     // Trigger file input click event when "Update" button is clicked
-    document.getElementById('update_button').addEventListener('click', function(event) {
+    document.getElementById('update_button').addEventListener('click', function (event) {
         event.preventDefault(); // Prevent default button behavior
-        fileInput.click(); // Trigger file input click event
+        // Trigger click on file input only if files are not already selected
+        if (fileInput.files.length === 0) {
+            fileInput.click(); // Trigger file input click event
+        }
     });
 
     form.addEventListener('submit', function (event) {
@@ -54,8 +56,19 @@ document.addEventListener('DOMContentLoaded', function () {
         const description = document.getElementById('description').value;
         const category = document.getElementById('category').value;
 
+        // Check if required fields are filled
+        if (insta_link === '' || description === '' || category === '') {
+            alert('Please fill in all required fields.');
+            return; // Stop form submission if any field is empty
+        }
+
         // Convert files to base64 strings
         const images = fileInput.files;
+        if (images.length === 0) {
+            alert('Please select at least one image.');
+            return; // Stop form submission if no files are selected
+        }
+
         const promises = Array.from(images).map(file => {
             return new Promise((resolve, reject) => {
                 const reader = new FileReader();
@@ -70,37 +83,37 @@ document.addEventListener('DOMContentLoaded', function () {
             // Construct JSON object for the new entry
             const newEntry = {
                 "img": base64Images, // Store base64-encoded images
-                "insta": insta_link, // Assuming the Instagram link is in the title field
+                "insta": insta_link,
                 "description": description,
                 "category": category
             };
 
-            // Load existing JSON data
-            fetch('images.json')
-                .then(response => response.json())
-                .then(data => {
-                    // Generate a new ID by incrementing the last ID or starting from 1 if no data exists
-                    let lastId = Object.keys(data).length > 0 ? parseInt(Object.keys(data)[Object.keys(data).length - 1]) : 0;
-                    const newId = (lastId + 1).toString().padStart(4, '0'); // Ensure 4-digit format
-
-                    // Add the new entry to the existing data
-                    data[newId] = newEntry;
-
-                    // Update images.json with the updated data
-                    return fetch('images.json', {
-                        method: 'PUT', // Assuming you're updating the entire JSON file
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify(data)
-                    });
-                })
+            // Update portfolio on the server
+            updatePortfolio(newEntry)
                 .then(() => {
-                    // Optionally, you can redirect the user to another page or display a success message
-                    // window.location.href = 'success.html';
-                    alert('Portfolio updated successfully!');
+                    // Redirect to index.html after successful update
+                    window.location.href = 'index.html';
                 })
-                .catch(error => console.error('Error:', error));
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Failed to update portfolio. Please try again later.');
+                });
         });
     });
 });
+
+function updatePortfolio(newEntry) {
+    return fetch('/updatePortfolio', { // Assuming the server endpoint is '/updatePortfolio'
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(newEntry)
+    })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        });
+}
