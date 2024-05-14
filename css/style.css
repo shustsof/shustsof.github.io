@@ -1,3 +1,10 @@
+main {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /*justify-content: center;*/
+  /*min-height: 100vh;*/
+}
 
 
 body {
@@ -27,13 +34,28 @@ nav {
   gap: 1rem;
 }
 
+/*.content {*/
+/*  display: none;*/
+/*  flex-wrap: wrap;*/
+/*  justify-content: center;*/
+/*  padding: 2rem;*/
+
+/*  overflow: hidden;*/
+/*  height: 0;*/
+/*  transition: height 0.5s ease, opacity 0.5s ease; !* Добавлена анимация opacity *!*/
+/*}*/
+
 .content {
-  padding: 2rem;
   display: none;
-  overflow: hidden;
-  height: 0;
-  transition: height 0.5s ease, opacity 0.5s ease; /* Добавлена анимация opacity */
+  flex-wrap: wrap;
+  justify-content: space-between; /* Равномерное распределение пространства между карточками */
+  padding: 2rem;
+  max-width: 1000px; /* Максимальная ширина галереи */
+  margin: 0 auto; /* Центрируем галерею по горизонтали */
 }
+
+
+
 
 .content.active {
   display: block;
@@ -44,12 +66,10 @@ nav {
 .content h2 {
   opacity: 0; /* Устанавливаем начальное значение прозрачности */
   transition: opacity 0.5s ease; /* Добавляем анимацию opacity */
+  margin: 0px;
 }
 
-.content.active p,
-.content.active h2 {
-  opacity: 1; /* Устанавливаем конечное значение прозрачности */
-}
+
 
 #insta-button {
   position: absolute;
@@ -65,23 +85,33 @@ nav {
   width: 30px; /* Adjust as needed */
   height: 23px; /* Adjust as needed */
 }
-/* Add styles for Instagram button */
-.instagram-button {
-  position: relative;
-  top: 80px;
-  left: -20px;
-  background: none;
-  border: none;
-  padding: 0;
-}
+
+
 
 .instagram-button img {
   width: 31px; /* Adjust as needed */
   height: 21px; /* Adjust as needed */
+
+}
+
+.instagram-button {
+  /*margin-top: 10px; !* Пространство между кнопкой и описанием *!*/
+  background: none;
 }
 
 
+
+
+.card img,
+.card video {
+  max-width: 90%; /* Максимальная ширина изображения или видео */
+  height: auto; /* Автоматическая высота, чтобы сохранить пропорции */
+  margin: 10px;
+}
+
 .card {
+
+  text-align: center; /* Центрирование содержимого */
   margin: 20px;
   padding: 10px;
   align-items: center;
@@ -90,68 +120,20 @@ nav {
   box-shadow: 0 2px 4px #0000004d;
   display: flex;
   flex-direction: column;
-  height: 18rem;
+  /*height: 18rem;*/
   justify-content: center;
   overflow: hidden;
-  text-align: center;
+
   transition: box-shadow .3s ease-in-out;
-  width: 14rem;
-}
-
-.card img,
-.card video {
-  /*margin-top: 10%;*/
-  max-width: 90%; /* Максимальная ширина изображения/видео будет равна ширине карточки */
-  max-height: 90%; /* Максимальная высота изображения/видео будет равна высоте карточки */
-}
-
-.open-card-button {
-  position: absolute;
-  top: 474px;
-  left: 160px;
-  background: none;
-  border: none;
-  padding: 0;
-
-}
-
-.open-card-button img {
-  width: 25px;
-  height: 25px;
-}
-
-/* Стили для описания карточки */
-.card-details {
-  position: fixed; /* Фиксированное положение для показа поверх остального контента */
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  z-index: 2; /* Отобразить поверх всего */
-  display: none; /* Скрыть по умолчанию */
-}
-
-.card-details img {
-  max-width: 300px; /* Максимальная ширина изображения */
-}
-
-.card-details p {
-  margin-top: 10px;
+  width: 17rem;
+  height: auto;
 }
 
 
-.image-square {
-  width: 200px;
-  height: 200px;
-  background-color: #ffffff;
-  background-size: cover;
-  background-position: center;
-  border: 1px solid #ccc;
-  cursor: pointer;
-}
+
+
+
+
 
 footer {
   text-align: center;

@@ -9,22 +9,22 @@ document.addEventListener("DOMContentLoaded", function() {
   const animationsContent = document.getElementById("animations-content");
   const aboutContent = document.getElementById("about-content");
 
-  sketchesButton.addEventListener("click", function() {
+  sketchesButton.addEventListener("click", function () {
     toggleContent(sketchesContent);
     hideContent([animationsContent, artsContent, aboutContent]);
   });
 
-  artsButton.addEventListener("click", function() {
+  artsButton.addEventListener("click", function () {
     toggleContent(artsContent);
     hideContent([sketchesContent, animationsContent, aboutContent]);
   });
 
-  animationsButton.addEventListener("click", function() {
+  animationsButton.addEventListener("click", function () {
     toggleContent(animationsContent);
     hideContent([sketchesContent, artsContent, aboutContent]);
   });
 
-  aboutButton.addEventListener("click", function() {
+  aboutButton.addEventListener("click", function () {
     toggleContent(aboutContent);
     hideContent([sketchesContent, animationsContent, artsContent]);
   });
@@ -47,14 +47,14 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   const languages = [
-    { code: "cs", text: "Portfolio\nSofia Šustová" }, // Чешский
-    { code: "ru", text: "Портфолио\nСофия Шустова" }, // Русский
-    { code: "es", text: "포트폴리오\n소피아 슈스토바" }, // Корейский
-    { code: "fa", text: "نمونه کارها\nصوفیا شوستوا" }, // Персидский
-    { code: "en", text: "Portfolio\nSofiia Shustova" }, // Английский
-    { code: "ja", text: "ポートフォリオ\nショフィアシュストワ" }, // Японский
-    { code: "de", text: "Portfolio\nSofia Schustowa" }, // Немецкий
-    { code: "zh", text: "投资组合\n索菲亚舒斯托娃" } // Китайский
+    {code: "cs", text: "Portfolio\nSofia Šustová"}, // Чешский
+    {code: "ru", text: "Портфолио\nСофия Шустова"}, // Русский
+    {code: "es", text: "포트폴리오\n소피아 슈스토바"}, // Корейский
+    {code: "fa", text: "نمونه کارها\nصوفیا شوستوا"}, // Персидский
+    {code: "en", text: "Portfolio\nSofiia Shustova"}, // Английский
+    {code: "ja", text: "ポートフォリオ\nショフィアシュストワ"}, // Японский
+    {code: "de", text: "Portfolio\nSofia Schustowa"}, // Немецкий
+    {code: "zh", text: "投资组合\n索菲亚舒斯托娃"} // Китайский
 
   ];
   const header = document.getElementById("portfolio-header");
@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function() {
     author.classList.remove("fade-in"); // Добавляем удаление класса анимации с именем
     setTimeout(() => {
       currentLanguageIndex = (currentLanguageIndex + 1) % languages.length;
-      const { text } = languages[currentLanguageIndex];
+      const {text} = languages[currentLanguageIndex];
       const [portfolioText, authorText] = text.split("\n"); // Разделяем текст на портфолио и имя
       header.textContent = portfolioText;
       author.textContent = authorText; // Устанавливаем новое имя
@@ -89,69 +89,63 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   }
 
+// Функция для создания карточки изображения или видео
+  function createCard(item) {
+    const card = document.createElement('div');
+    card.classList.add('card');
 
-  // Чтение JSON файла
+    let media;
+    if (item.category === 'animation') {
+      media = document.createElement('video');
+    } else if (item.category === 'sketch') {
+      media = document.createElement('img');
+    }
+
+    media.src = item.img;
+    media.alt = item.description;
+    card.appendChild(media);
+
+    const instagramButton = createInstagramButton(item.insta);
+    const description = createDescription(item.description);
+
+    card.appendChild(description);
+    card.appendChild(instagramButton);
+
+    return card;
+  }
+
+// Функция для создания кнопки Instagram
+  function createInstagramButton(instaLink) {
+    const button = document.createElement('button');
+    button.classList.add('instagram-button');
+    const link = document.createElement('a');
+    link.href = instaLink;
+    link.target = '_blank';
+    const image = document.createElement('img');
+    image.src = 'img/INSTA.png';
+    image.alt = 'Instagram';
+    link.appendChild(image);
+    button.appendChild(link);
+    return button;
+  }
+
+// Функция для создания описания
+  function createDescription(text) {
+    const p = document.createElement('p');
+    p.textContent = text;
+    return p;
+  }
+
+// Чтение JSON файла и создание карточек
   fetch('images.json')
       .then(response => response.json())
       .then(data => {
-        // Перебираем каждую запись в JSON
         Object.keys(data).forEach(key => {
           const item = data[key];
-
-          // Создаем элементы HTML
-          const card = document.createElement('div');
-          card.classList.add('card');
-
-          let content; // Для хранения секции, куда будет добавлена карточка
-          let openButton; // Для хранения кнопки arrow
-
-          // Создаем кнопку arrow
-          openButton = document.createElement('button');
-          openButton.classList.add('open-card-button');
-          openButton.innerHTML = '<img src="img/arrow-icon.png" alt="open Card">';
-
-          // Определяем категорию и создаем соответствующий элемент
-          if (item.category === 'animation') {
-            content = document.getElementById('animations-content');
-            const video = document.createElement('video');
-            video.src = item.img;
-            card.appendChild(video);
-          } else if (item.category === 'sketch') {
-            content = document.getElementById('sketches-content');
-            const image = document.createElement('img');
-            image.src = item.img;
-            card.appendChild(image);
-          } else {
-            // Добавьте обработку других категорий по необходимости
-            return; // Пропускаем записи с неопределенными категориями
-          }
-
-          // Создаем кнопку Instagram
-          const instagramButton = document.createElement('button');
-          instagramButton.classList.add('instagram-button');
-          const instagramLink = document.createElement('a');
-          instagramLink.href = item.insta;
-          instagramLink.target = '_blank';
-          const instagramImage = document.createElement('img');
-          instagramImage.src = 'img/INSTA.png';
-          instagramImage.alt = 'Instagram';
-          instagramLink.appendChild(instagramImage);
-          instagramButton.appendChild(instagramLink);
-
-          // Создаем описание
-          const description = document.createElement('p');
-          description.textContent = item.description;
-
-          // Добавляем элементы в карточку
-          card.appendChild(openButton); // Добавляем кнопку arrow
-          card.appendChild(instagramButton);
-          card.appendChild(description);
-
-          // Добавляем карточку в соответствующую секцию
+          const content = (item.category === 'animation') ? document.getElementById('animations-content') : document.getElementById('sketches-content');
+          const card = createCard(item);
           content.appendChild(card);
         });
       })
-      .catch(error => console.error('Error fetching JSON:', error));});
-
-
-
+      .catch(error => console.error('Error fetching JSON:', error));
+})
