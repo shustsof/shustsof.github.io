@@ -64,11 +64,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Convert files to base64 strings
         const images = fileInput.files;
-        if (images.length === 0) {
-            alert('Please select at least one image.');
-            return; // Stop form submission if no files are selected
-        }
-
         const promises = Array.from(images).map(file => {
             return new Promise((resolve, reject) => {
                 const reader = new FileReader();
