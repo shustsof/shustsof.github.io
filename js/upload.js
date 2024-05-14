@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Get form values
         const images = document.getElementById('images').files;
-        const insta-link = document.getElementById('insta-link').value;
+        const insta_link = document.getElementById('insta_link').value;
         const description = document.getElementById('description').value;
         const category = document.getElementById('category').value;
 
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function () {
             // Construct JSON object for the new entry
             const newEntry = {
                 "img": base64Images, // Store base64-encoded images
-                "insta": insta-link, // Assuming the Instagram link is in the title field
+                "insta": insta_link, // Assuming the Instagram link is in the title field
                 "description": description,
                 "category": category
             };
