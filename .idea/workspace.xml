@@ -4,132 +4,83 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0948d9f1-2a66-430f-9db3-47ef9572f826" name="Changes" comment="oush">
+    <list default="true" id="51e30e56-a331-4e96-90fe-7d7c0d8a6f06" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images.json" beforeDir="false" afterPath="$PROJECT_DIR$/js/images.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/jquery-3.7.1.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/jquery-3.7.1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/upload.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/upload.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/upload.html" beforeDir="false" afterPath="$PROJECT_DIR$/upload.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="HTML File" />
-        <option value="JavaScript File" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;shustsof&quot;
-  }
-}</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/shustsof/kaj_portfolio.git&quot;,
-    &quot;accountId&quot;: &quot;f006a745-15f5-4d1f-ad75-3b4b0fc4f452&quot;
-  }
-}</component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectColorInfo">{
-  &quot;customColor&quot;: &quot;&quot;,
-  &quot;associatedIndex&quot;: 0
+  &quot;associatedIndex&quot;: 4
 }</component>
-  <component name="ProjectId" id="2gMISC0ci0wQEitQFveOfs1WDjM" />
+  <component name="ProjectId" id="2gYrn1K3YCCvYfe42Lok8Uz3y0m" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;JavaScript Debug.index.html.executor&quot;: &quot;Run&quot;,
-    &quot;JavaScript Debug.upload.html.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/javaslave/Downloads/Telegram Desktop/kaj_portfolio&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/js" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240" />
-        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.240" />
+        <option value="jdk-17.0.10-azul-17.0.10-4caba194b151-d69ea429" />
       </set>
     </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="0948d9f1-2a66-430f-9db3-47ef9572f826" name="Changes" comment="" />
-      <created>1715501018180</created>
+      <changelist id="51e30e56-a331-4e96-90fe-7d7c0d8a6f06" name="Changes" comment="" />
+      <created>1715885515502</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1715501018180</updated>
-      <workItem from="1715501020072" duration="2009000" />
-      <workItem from="1715544761577" duration="2359000" />
-      <workItem from="1715696371434" duration="13252000" />
+      <updated>1715885515502</updated>
+      <workItem from="1715885516528" duration="1635000" />
+      <workItem from="1715887160535" duration="703000" />
     </task>
-    <task id="LOCAL-00001" summary="oush">
-      <option name="closed" value="true" />
-      <created>1715547202326</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1715547202326</updated>
-    </task>
-    <task id="LOCAL-00002" summary="oush">
-      <option name="closed" value="true" />
-      <created>1715707943017</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1715707943017</updated>
-    </task>
-    <task id="LOCAL-00003" summary="oush">
-      <option name="closed" value="true" />
-      <created>1715708099956</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1715708099956</updated>
-    </task>
-    <task id="LOCAL-00004" summary="oush">
-      <option name="closed" value="true" />
-      <created>1715709087119</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1715709087119</updated>
-    </task>
-    <task id="LOCAL-00005" summary="oush">
-      <option name="closed" value="true" />
-      <created>1715714363432</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1715714363432</updated>
-    </task>
-    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="oush" />
-    <option name="LAST_COMMIT_MESSAGE" value="oush" />
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

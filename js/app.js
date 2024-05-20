@@ -1,4 +1,11 @@
-document.addEventListener("DOMContentLoaded", function() {
+
+const dbName = "PortfolioDB";
+let db;
+
+
+document.addEventListener("DOMContentLoaded", async function () {
+  await openDatabase();
+
   const sketchesButton = document.getElementById("sketches-button");
   const artsButton = document.getElementById("arts-button");
   const animationsButton = document.getElementById("animations-button");
@@ -101,15 +108,17 @@ document.addEventListener("DOMContentLoaded", function() {
       media = document.createElement('img');
     }
 
-    media.src = item.img;
+    media.src = item.images;
     media.alt = item.description;
     card.appendChild(media);
 
-    const instagramButton = createInstagramButton(item.insta);
+    const instagramButton = createInstagramButton(item.insta_link);
     const description = createDescription(item.description);
 
     card.appendChild(description);
     card.appendChild(instagramButton);
+
+    //append card
 
     return card;
   }
@@ -136,9 +145,31 @@ document.addEventListener("DOMContentLoaded", function() {
     return p;
   }
 
+function openDatabase() {
+  return new Promise((resolve, reject) => {
+    const request = indexedDB.open(dbName, 1);
+
+    request.onupgradeneeded = function(event) {
+      db = event.target.result;
+      if (!db.objectStoreNames.contains("entries")) {
+        db.createObjectStore("entries", { autoIncrement: true });
+      }
+    };
+
+    request.onsuccess = function(event) {
+      db = event.target.result;
+      resolve();
+    };
+
+    request.onerror = function(event) {
+      reject("Database error: " + event.target.errorCode);
+    };
+  });
+}
+
 // Чтение JSON файла и создание карточек
-  fetch('images.json')
-      .then(response => response.json())
+  getAllEntries()
+      .then(response => response)
       .then(data => {
         Object.keys(data).forEach(key => {
           const item = data[key];
@@ -149,3 +180,19 @@ document.addEventListener("DOMContentLoaded", function() {
       })
       .catch(error => console.error('Error fetching JSON:', error));
 })
+
+async function getAllEntries() {
+  return new Promise((resolve, reject) => {
+    const transaction = db.transaction(["entries"], "readonly");
+    const store = transaction.objectStore("entries");
+    const request = store.getAll();
+
+    request.onsuccess = function() {
+      resolve(request.result);
+    };
+
+    request.onerror = function(event) {
+      reject("Error fetching data from database: " + event.target.errorCode);
+    };
+  });
+}

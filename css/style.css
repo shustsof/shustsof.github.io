@@ -110,24 +110,19 @@ nav {
 }
 
 .card {
-
+  width: calc(33.33% - 40px); /* Учитывается отступ между карточками */
+  margin-bottom: 20px; /* Пространство между рядами карточек */
   text-align: center; /* Центрирование содержимого */
-  margin: 20px;
-  padding: 10px;
-  align-items: center;
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 2px 4px #0000004d;
-  display: flex;
-  flex-direction: column;
-  /*height: 18rem;*/
-  justify-content: center;
   overflow: hidden;
-
   transition: box-shadow .3s ease-in-out;
-  width: 17rem;
-  height: auto;
+  display: flex; /* Добавлено */
+  flex-direction: column; /* Добавлено */
+  justify-content: space-between; /* Добавлено */
 }
+
 
 
 
