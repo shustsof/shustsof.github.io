@@ -1,4 +1,3 @@
-
 const languages = [
     { code: "cs", text: "Portfolio\nSofia Šustová" }, // Чешский
     { code: "ru", text: "Портфолио\nСофия Шустова" }, // Русский
@@ -13,9 +12,6 @@ const header = document.getElementById("portfolio-header");
 const author = document.getElementById("author"); // Получаем параграф с именем
 
 let currentLanguageIndex = 0;
-const dbName = "PortfolioDB";
-let db;
-
 
 function changeLanguage() {
     header.classList.remove("fade-in");
@@ -33,69 +29,91 @@ function changeLanguage() {
 
 setInterval(changeLanguage, 3000); // Изменяем язык каждые 3 секунды
 
-const form = document.querySelector('.upload-form');
-console.log('form',form)
-const fileInput = document.getElementById('images');
 
-async function addEntry(entry) {
-    return new Promise((resolve, reject) => {
-        const transaction = db.transaction(["entries"], "readwrite");
-        const store = transaction.objectStore("entries");
-        const request = store.add(entry);
 
-        request.onsuccess = function() {
-            resolve();
-        };
 
-        request.onerror = function(event) {
-            reject("Error writing to the database: " + event.target.errorCode);
-        };
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.querySelector('form');
+    const fileInput = document.getElementById('images');
+
+    // Trigger file input click event when "Update" button is clicked
+    document.getElementById('update_button').addEventListener('click', function (event) {
+        event.preventDefault(); // Prevent default button behavior
+        // Trigger click on file input only if files are not already selected
+        if (fileInput.files.length === 0) {
+            fileInput.click(); // Trigger file input click event
+        }
     });
-}
 
-// Setup complete, integrate with the existing form handling
-document.addEventListener('DOMContentLoaded', async () => {
-    await openDatabase();
-});
+    form.addEventListener('submit', function (event) {
+        event.preventDefault(); // Prevent default form submission
 
-form.addEventListener('submit', async (event) => {
-    event.preventDefault();
+        // Get form values
+        const insta_link = document.getElementById('insta_link').value;
+        const description = document.getElementById('description').value;
+        const category = document.getElementById('category').value;
 
-    if (fileInput.files.length === 0) {
-        fileInput.click();
-        return;
-    }
+        // Check if required fields are filled
+        if (insta_link === '' || description === '' || category === '') {
+            alert('Please fill in all required fields.');
+            return; // Stop form submission if any field is empty
+        }
 
-    const insta_link = document.getElementById('insta_link').value;
-    const description = document.getElementById('description').value;
-    const category = document.getElementById('category').value;
+        // Convert files to base64 strings
+        const images = fileInput.files;
+        if (images.length === 0) {
+            alert('Please select at least one image.');
+            return; // Stop form submission if no files are selected
+        }
 
-    if (insta_link === '' || description === '' || category === '') {
-        alert('Please fill in all required fields.');
-        return;
-    }
-
-    const images = await readFilesAsDataURL(fileInput.files);
-    await addEntry({
-        insta_link,
-        description,
-        category,
-        images
-    });
-    console.log('Entry added to the database');
-});
-
-async function readFilesAsDataURL(files) {
-    const results = [];
-    for (const file of files) {
-        const dataURL = await new Promise((resolve, reject) => {
-            const reader = new FileReader();
-            reader.onload = () => resolve(reader.result);
-            reader.onerror = () => reject(reader.error);
-            reader.readAsDataURL(file);
+        const promises = Array.from(images).map(file => {
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.onload = () => resolve(reader.result);
+                reader.onerror = reject;
+                reader.readAsDataURL(file);
+            });
         });
-        results.push(dataURL);
-    }
-    return results;
-}
 
+        // Wait for all files to be converted
+        Promise.all(promises).then(base64Images => {
+            // Construct JSON object for the new entry
+            const newEntry = {
+                "img": base64Images, // Store base64-encoded images
+                "insta": insta_link,
+                "description": description,
+                "category": category
+            };
+
+            // Update portfolio on the server
+            updatePortfolio(newEntry)
+                .then(() => {
+                    // Redirect to index.html after successful update
+                    window.location.href = 'index.html';
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Failed to update portfolio. Please try again later.');
+                });
+        });
+    });
+});
+
+function updatePortfolio(newEntry) {
+    return fetch('/updatePortfolio', { // Assuming the server endpoint is '/updatePortfolio'
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(newEntry)
+    })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        });
+}
