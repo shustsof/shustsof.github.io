@@ -1,37 +1,33 @@
 const languages = [
-    { code: "cs", text: "Portfolio\nSofia Šustová" }, // Чешский
-    { code: "ru", text: "Портфолио\nСофия Шустова" }, // Русский
-    { code: "es", text: "포트폴리오\n소피아 슈스토바" }, // Корейский
-    { code: "fa", text: "نمونه کارها\nصوفیا شوستوا" }, // Персидский
-    { code: "en", text: "Portfolio\nSofiia Shustova" }, // Английский
-    { code: "ja", text: "ポートフォリオ\nショフィアシュストワ" }, // Японский
-    { code: "de", text: "Portfolio\nSofia Schustowa" }, // Немецкий
-    { code: "zh", text: "投资组合\n索菲亚舒斯托娃" } // Китайский
+    { code: "cs", text: "Portfolio\nSofia Šustová" }, // Czech
+    { code: "ru", text: "Портфолио\nСофия Шустова" }, // Russian
+    { code: "es", text: "포트폴리오\n소피아 슈스토바" }, // Korean
+    { code: "fa", text: "نمونه کارها\nصوفیا شوستوا" }, // Persian
+    { code: "en", text: "Portfolio\nSofiia Shustova" }, // English
+    { code: "ja", text: "ポートフォリオ\nショフィアシュストワ" }, // Japanese
+    { code: "de", text: "Portfolio\nSofia Schustowa" }, // German
+    { code: "zh", text: "投资组合\n索菲亚舒斯托娃" } // Chinese
 ];
 const header = document.getElementById("portfolio-header");
-const author = document.getElementById("author"); // Получаем параграф с именем
+const author = document.getElementById("author"); // Get the paragraph with the name
 
 let currentLanguageIndex = 0;
 
 function changeLanguage() {
     header.classList.remove("fade-in");
-    author.classList.remove("fade-in"); // Добавляем удаление класса анимации с именем
+    author.classList.remove("fade-in"); // Remove the animation class from the name
     setTimeout(() => {
         currentLanguageIndex = (currentLanguageIndex + 1) % languages.length;
         const { text } = languages[currentLanguageIndex];
-        const [portfolioText, authorText] = text.split("\n"); // Разделяем текст на портфолио и имя
+        const [portfolioText, authorText] = text.split("\n"); // Split the text into portfolio and name
         header.textContent = portfolioText;
-        author.textContent = authorText; // Устанавливаем новое имя
+        author.textContent = authorText; // Set the new name
         header.classList.add("fade-in");
-        author.classList.add("fade-in"); // Добавляем класс анимации с именем
-    }, 500); // Добавляем небольшую задержку перед изменением текста, чтобы анимация завершилась
+        author.classList.add("fade-in"); // Add the animation class to the name
+    }, 500); // Add a small delay before changing the text to allow the animation to complete
 }
 
 setInterval(changeLanguage, 3000);
-
-
-
-
 
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.querySelector('form');

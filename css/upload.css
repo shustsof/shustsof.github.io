@@ -1,9 +1,10 @@
-/* Основные стили */
+/* Basic styling */
 * {
     box-sizing: border-box;
     font-family: 'Lato', sans-serif;
 }
 
+/* Fade animation for elements */
 .fade-in {
     animation: fadeIn 0.5s ease-in-out forwards;
 }
@@ -12,12 +13,14 @@
     animation: fadeOut 0.5s ease-in-out forwards;
 }
 
+/* Body styles */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     background-color: #f7f7f7;
 }
 
+/* Header and footer styles */
 header, footer {
     text-align: center;
     padding: 1rem 0;
@@ -31,6 +34,7 @@ footer a {
     text-decoration: none;
 }
 
+/* Button styles */
 button {
     border: none;
     transition: font-size 0.3s ease;
@@ -49,6 +53,7 @@ button:hover {
     font-size: 16px;
 }
 
+/* Instagram button styles */
 #insta-button {
     position: absolute;
     top: 10px;
@@ -63,6 +68,7 @@ button:hover {
     height: 23px;
 }
 
+/* Upload and home button styles */
 #upload-arrow,
 #home {
     position: fixed;
@@ -77,12 +83,14 @@ button:hover {
     height: 23px;
 }
 
+/* Form group styles */
 .form-group {
     max-width: 500px;
     margin: auto;
     margin-bottom: 30px;
 }
 
+/* Form input styles */
 .form-controll {
     display: block;
     padding: 8px 16px;
@@ -99,6 +107,7 @@ button:hover {
     outline: -webkit-focus-ring-color auto 5px;
 }
 
+/* File input styles */
 .file-area {
     width: 100%;
     position: relative;
@@ -116,6 +125,7 @@ button:hover {
     cursor: pointer;
 }
 
+/* Dummy file input styles */
 .file-dummy {
     width: 100%;
     padding: 30px;
@@ -152,6 +162,7 @@ button:hover {
     display: none;
 }
 
+/* Fade in and fade out animations */
 @keyframes fadeIn {
     from {
         opacity: 0;

@@ -3,32 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <title>Portfolio</title>
+  <!-- Favicon for the page -->
   <link rel="shortcut icon" href="img/png-transparent-cat-computer-icons-dog-pet-cat-cat-like-mammal-animals-text.png">
+  <!-- Linking the stylesheet for the page -->
   <link rel="stylesheet" href="css/index.css">
+  <!-- jQuery library -->
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <!-- JavaScript file for the page -->
   <script src="js/app.js"></script>
-  <script src="server.js"></script>
 </head>
 <body>
 <div id="initial-view">
+  <!-- Initial portfolio header -->
   <h1 id="portfolio-header_init">Portfolio</h1>
+  <!-- Initial author name display -->
   <p id="author_init">Sofiia Shustova</p>
 </div>
 
 <header id="main-header">
+  <!-- Main portfolio header -->
   <h1 id="portfolio-header">Portfolio</h1>
+  <!-- Main author name display -->
   <p id="author">Sofiia Shustova</p>
+  <!-- Instagram button with a link to the Instagram profile -->
   <button id="insta-button">
     <a id="insta" href="https://www.instagram.com/eericssonn/" target="_blank">
       <img src="img/INSTA.png" alt="Instagram">
     </a>
   </button>
-
-  <a id="upload-arrow" href="upload.html">
+  <!-- Upload arrow button -->
+  <a id="upload-arrow" href="#">
     <img src="img/up%5Bload.png" alt="Upload">
   </a>
 </header>
 
+<!-- Navigation buttons for different sections -->
 <nav>
   <button id="sketches-button">Sketches</button>
   <button id="arts-button">Arts</button>
@@ -36,12 +45,29 @@
   <button id="about-button">About</button>
 </nav>
 
+<!-- Main content area with different sections -->
 <main class="contents">
   <section id="sketches-content" class="content"></section>
   <section id="arts-content" class="content"></section>
   <section id="animations-content" class="content"></section>
   <section id="about-content" class="content"></section>
 </main>
+
+<!-- Footer of the page -->
 <footer></footer>
+
+<!-- Modal window for entering a code phrase -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <!-- Close button for the modal -->
+    <span class="close">&times;</span>
+    <p>Code phrase:</p>
+    <!-- Input field for the code phrase -->
+    <input type="text" id="code-input">
+    <!-- Submit button for the code phrase -->
+    <button id="submit-code">Accept</button>
+  </div>
+</div>
+
 </body>
 </html>

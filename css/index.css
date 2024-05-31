@@ -1,195 +1,281 @@
-/* Основные стили */
+/* Basic Styles */
+/* Setting box model and font for all elements */
 * {
     box-sizing: border-box;
     font-family: 'Lato', sans-serif;
 }
 
+/* Class for fading in elements */
 .fade-in {
     animation: fadeIn 0.5s ease-in-out forwards;
 }
 
+/* Class for fading out elements */
 .fade-out {
     animation: fadeOut 0.5s ease-in-out forwards;
 }
 
+/* Body styles */
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f7f7f7;
+    font-family: Arial, sans-serif; /* Using Arial font for body */
+    line-height: 1.6; /* Setting line height */
+    background-color: #f7f7f7; /* Background color */
 }
 
+/* Header and footer styles */
 header, footer {
-    text-align: center;
-    padding: 1rem 0;
+    text-align: center; /* Center aligning text */
+    padding: 1rem 0; /* Padding for header and footer */
 }
 
+/* Footer specific styles */
 footer {
-    background-color: #f7f7f7;
+    background-color: #f7f7f7; /* Footer background color */
 }
 
+/* Anchor tag styles within footer */
 footer a {
-    text-decoration: none;
+    text-decoration: none; /* Removing underline from links */
 }
 
+/* Button styles */
 button {
-    border: none;
-    transition: font-size 0.3s ease;
-    background-color: #f7f7f7;
-    padding: 8px 30px;
-    text-transform: uppercase;
-    font-weight: 300;
-    font-size: 11px;
-    text-shadow: 0 1px 2px #fff;
-    cursor: pointer;
-    margin: 0 auto;
-    display: block;
+    border: none; /* Removing border */
+    transition: font-size 0.3s ease; /* Smooth transition for font size */
+    background-color: #f7f7f7; /* Button background color */
+    padding: 8px 30px; /* Button padding */
+    text-transform: uppercase; /* Uppercase text */
+    font-weight: 300; /* Button font weight */
+    font-size: 11px; /* Button font size */
+    text-shadow: 0 1px 2px #fff; /* Text shadow */
+    cursor: pointer; /* Cursor style */
+    margin: 0 auto; /* Center aligning */
+    display: block; /* Display as block element */
 }
 
+/* Button hover effect */
 button:hover {
-    font-size: 16px;
+    font-size: 16px; /* Increasing font size on hover */
 }
 
+/* Instagram button specific styles */
 #insta-button {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background: none;
-    border: none;
-    padding: 0;
+    position: absolute; /* Positioning */
+    top: 10px; /* From top */
+    left: 10px; /* From left */
+    background: none; /* No background */
+    border: none; /* No border */
+    padding: 0; /* No padding */
 }
 
+/* Instagram button image styles */
 #insta-button img {
-    width: 30px;
-    height: 23px;
+    width: 30px; /* Image width */
+    height: 23px; /* Image height */
 }
 
+/* Styles for Instagram button */
 .instagram-button img {
-    width: 31px;
-    height: 21px;
+    width: 31px; /* Image width */
+    height: 21px; /* Image height */
 }
 
+/* Additional styles for Instagram button */
 .instagram-button {
-    background: none;
+    background: none; /* No background */
 }
 
+/* Styles for upload and home buttons */
 #upload-arrow,
 #home {
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    z-index: 9999;
+    position: fixed; /* Fixed positioning */
+    top: 10px; /* From top */
+    right: 10px; /* From right */
+    z-index: 9999; /* Z-index for stacking */
 }
 
+/* Styles for upload and home button images */
 #upload-arrow img,
 #home img {
-    width: 23px;
-    height: 23px;
+    width: 23px; /* Image width */
+    height: 23px; /* Image height */
 }
 
+/* Navigation styles */
 nav {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
+    display: flex; /* Display as flex */
+    justify-content: center; /* Center aligning */
+    gap: 1rem; /* Gap between elements */
 }
 
+/* Content container styles */
 .content {
-    display: none;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 2rem;
-    max-width: 1000px;
-    margin: 0 auto;
+    display: none; /* Initially hidden */
+    flex-wrap: wrap; /* Wrap content */
+    justify-content: space-between; /* Space between items */
+    padding: 2rem; /* Padding */
+    max-width: 1000px; /* Maximum width */
+    margin: 0 auto; /* Center aligning */
 }
 
+/* Active content styles */
 .content.active {
-    display: flex;
-    height: auto;
+    display: flex; /* Display as flex */
+    height: auto; /* Auto height */
 }
 
+/* Paragraph and heading styles within content */
 .content p,
 .content h2 {
-    opacity: 0;
-    transition: opacity 0.5s ease;
-    margin: 0px;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.5s ease; /* Smooth transition for opacity */
+    margin: 0px; /* Margin */
 }
 
+/* Image and video styles within card */
 .card img,
 .card video {
-    max-width: 90%;
-    height: auto;
-    margin: 10px;
+    max-width: 90%; /* Maximum width */
+    height: auto; /* Auto height */
+    margin: 10px; /* Margin */
 }
 
+/* Card styles */
 .card {
-    width: calc(33.33% - 40px);
-    margin-bottom: 20px;
-    text-align: center;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px #0000004d;
-    overflow: hidden;
-    transition: box-shadow .3s ease-in-out;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    width: calc(33.33% - 40px); /* Card width calculation */
+    margin-bottom: 20px; /* Margin bottom */
+    text-align: center; /* Center aligning text */
+    background-color: #fff; /* Card background color */
+    border-radius: 8px; /* Border radius */
+    box-shadow: 0 2px 4px #0000004d; /* Box shadow */
+    overflow: hidden; /* Hidden overflow */
+    transition: box-shadow .3s ease-in-out; /* Transition for box shadow */
+    display: flex; /* Display as flex */
+    flex-direction: column; /* Column layout */
+    justify-content: space-between; /* Space between items */
 }
 
+/* Initial view styles */
 #initial-view {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background-color: #f7f7f7;
-    z-index: 10000;
-    transition: all 1s ease;
+    display: flex; /* Display as flex */
+    flex-direction: column; /* Column layout */
+    justify-content: center; /* Center aligning */
+    align-items: center; /* Center aligning */
+    position: fixed; /* Fixed positioning */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: #f7f7f7; /* Background color */
+    z-index: 10000; /* Z-index for stacking */
+    transition: all 1s ease; /* Transition for all properties */
 }
 
+/* Loading styles for initial view */
 body.initial-loading #initial-view {
-    opacity: 1;
+    opacity: 1; /* Opacity */
 }
 
+/* Loaded styles for initial view */
 body.loaded #initial-view {
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-100%);
-    transition: transform 1s ease, opacity 1s ease, visibility 1s ease 1s;
+    opacity: 0; /* Opacity */
+    visibility: hidden; /* Hidden visibility */
+    transform: translateY(-100%); /* Transform */
+    transition: transform 1s ease, opacity 1s ease, visibility 1s ease 1s; /* Transition */
 }
 
+/* Loading styles for header, nav, main, and footer */
 body.initial-loading header,
 body.initial-loading nav,
 body.initial-loading main,
 body.initial-loading footer {
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 1s ease, visibility 1s ease;
+    opacity: 0; /* Opacity */
+    visibility: hidden; /* Hidden visibility */
+    transition: opacity 1s ease, visibility 1s ease; /* Transition */
 }
 
+/* Loaded styles for header, nav, main, and footer */
 body.loaded header,
 body.loaded nav,
 body.loaded main,
 body.loaded footer {
-    opacity: 1;
-    visibility: visible;
-    transition-delay: 1s;
+    opacity: 1; /* Opacity */
+    visibility: visible; /* Visible visibility */
+    transition-delay: 1s; /* Transition delay */
 }
 
+/* Keyframes for fading in */
 @keyframes fadeIn {
     from {
-        opacity: 0;
+        opacity: 0; /* From opacity */
     }
     to {
-        opacity: 1;
+        opacity: 1; /* To opacity */
     }
 }
 
+/* Keyframes for fading out */
 @keyframes fadeOut {
     from {
-        opacity: 1;
+        opacity: 1; /* From opacity */
     }
     to {
-        opacity: 0;
+        opacity: 0; /* To opacity */
     }
 }
+
+/* Styles for modal window */
+.modal {
+    display: none; /* Initially hidden */
+    position: fixed; /* Fixed positioning */
+    z-index: 1; /* Stack order */
+    left: 0; /* From left */
+    top: 0; /* From top */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Allowing scrolling */
+    background-color: rgba(0,0,0,0.4); /* Background color with opacity */
+}
+
+/* Styles for modal content */
+.modal-content {
+    background-color: #fefefe; /* Background color */
+    margin: 15% auto; /* Margin for centering */
+    padding: 20px; /* Padding */
+    border: 1px solid #888; /* Border */
+    width: 30%; /* Width */
+}
+
+/* Styles for code input */
+#code-input {
+    display: block; /* Display as block */
+    padding: 8px 16px; /* Padding */
+    width: 100%; /* Full width */
+    font-size: 16px; /* Font size */
+    background-color: rgb(0, 0, 0,0.05); /* Background color with opacity */
+    border: 1px solid rgb(0, 0, 0,0.1); /* Border */
+    color: rgba(0,0,0,0.5); /* Text color */
+    font-weight: 200; /* Font weight */
+    margin: 10px auto; /* Margin */
+}
+
+/* Focus styles for code input */
+#code-input:focus {
+    outline: 2px solid rgba(255,255,255,0.5); /* Outline on focus */
+    outline: -webkit-focus-ring-color auto 5px; /* Safari specific outline */
+}
+
+/* Styles for close button */
+.close {
+    color: #aaa; /* Text color */
+    float: right; /* Floating to the right */
+    font-size: 28px; /* Font size */
+    font-weight: bold; /* Font weight */
+}
+
+/* Hover and focus styles for close button */
+.close:hover,
+.close:focus {
+    color: black; /* Text color on hover/focus */
+    text-decoration: none; /* No underline */
+    cursor: pointer; /* Cursor style */
+}
+

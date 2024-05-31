@@ -7,17 +7,17 @@ const app = express();
 const PORT = 3000;
 const JSON_FILE_PATH = path.join(__dirname, 'images.json');
 
-// Настройка для раздачи статических файлов из директории текущего проекта
+// Configure to serve static files from the current project directory
 app.use(express.static(__dirname));
 
-// Настройка body-parser для обработки JSON запросов
+// Configure body-parser to handle JSON requests
 app.use(bodyParser.json({ limit: '50mb' }));
 
-// Обработка запроса на обновление портфолио
+// Handle request to update the portfolio
 app.post('/updatePortfolio', (req, res) => {
     const newEntry = req.body;
 
-    // Читаем текущий JSON файл
+    // Read the current JSON file
     fs.readFile(JSON_FILE_PATH, 'utf8', (err, data) => {
         if (err) {
             console.error('Error reading JSON file:', err);
@@ -26,11 +26,11 @@ app.post('/updatePortfolio', (req, res) => {
 
         let jsonData = JSON.parse(data);
 
-        // Генерируем новый ID для нового элемента
+        // Generate a new ID for the new entry
         const newId = ('0000' + (Object.keys(jsonData).length + 1)).slice(-4);
         jsonData[newId] = newEntry;
 
-        // Записываем обновленный JSON обратно в файл
+        // Write the updated JSON back to the file
         fs.writeFile(JSON_FILE_PATH, JSON.stringify(jsonData, null, 2), (err) => {
             if (err) {
                 console.error('Error writing JSON file:', err);
@@ -42,7 +42,7 @@ app.post('/updatePortfolio', (req, res) => {
     });
 });
 
-// Запуск сервера
+// Start the server
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });

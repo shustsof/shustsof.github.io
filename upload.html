@@ -3,48 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <title>Update portfolio</title>
+    <!-- Favicon for the page -->
     <link rel="shortcut icon" href="img/png-transparent-cat-computer-icons-dog-pet-cat-cat-like-mammal-animals-text.png">
+    <!-- Linking the stylesheet for the page -->
     <link rel="stylesheet" href="css/upload.css">
-
 </head>
 <body>
 <header>
+    <!-- Header title for the portfolio -->
     <h1 id="portfolio-header">Portfolio</h1>
-    <p id="author">Sofiia Shustova</p> <!-- Добавлен параграф с вашим именем -->
+    <!-- Author's name displayed in the header -->
+    <p id="author">Sofiia Shustova</p> <!-- Added a paragraph with your name -->
+    <!-- Instagram button with a link to the Instagram profile -->
     <button id="insta-button">
         <a id="insta" href="https://www.instagram.com/eericssonn/" target="_blank">
             <img src="img/INSTA.png" alt="Instagram">
         </a>
     </button>
-
+    <!-- Home button with a link to the home page -->
     <a id="home" href="index.html">
         <img src="img/img.png" alt="Home">
     </a>
-
 </header>
 
+<!-- Form for uploading portfolio items -->
 <form class="upload-form">
     <h1><strong></strong></h1>
 
+    <!-- File input section for images and videos -->
     <div class="form-group file-area">
         <label for="images">Images <span>PNG or MP4</span></label>
         <input type="file" name="images" id="images" required="required" multiple="multiple"/>
         <div class="file-dummy">
+            <!-- Message displayed when files are successfully selected -->
             <div class="success">Great, your files are selected. Keep on.</div>
+            <!-- Default message prompting user to select files -->
             <div class="default">Please select some files</div>
         </div>
     </div>
 
+    <!-- Input field for Instagram link -->
     <div class="form-group">
         <label for="insta_link">Instagram link </label>
         <input type="text" name="insta_link" id="insta_link" required="required" class="form-controll"/>
     </div>
 
+    <!-- Input field for description -->
     <div class="form-group">
         <label for="description">Description </label>
         <input type="text" name="description" id="description" required="required" class="form-controll"/>
     </div>
 
+    <!-- Dropdown menu for selecting category -->
     <div class="form-group">
         <label for="category">Category </label>
         <select id="category" name="category" class="form-controll" required>
@@ -55,15 +65,16 @@
         </select>
     </div>
 
+    <!-- Submit button for the form -->
     <button type="submit">Update</button>
 </form>
 
-
-
+<!-- Linking the JavaScript file for form handling -->
 <script src="js/upload.js"></script>
+<!-- Linking jQuery library -->
 <script src="js/jquery-3.7.1.js"></script>
+<!-- Linking server-side script -->
 <script src="server.js"></script>
 
 </body>
-
 </html>

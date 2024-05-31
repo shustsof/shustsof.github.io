@@ -3,11 +3,13 @@ document.addEventListener("DOMContentLoaded", function() {
   const mainContent = document.querySelector("main");
   const body = document.body;
 
+  // Event listener to transition from initial view to main content
   initialView.addEventListener("click", function() {
     body.classList.remove("initial-loading");
     body.classList.add("loaded");
   });
 
+  // Get buttons and content sections for navigation
   const sketchesButton = document.getElementById("sketches-button");
   const artsButton = document.getElementById("arts-button");
   const animationsButton = document.getElementById("animations-button");
@@ -18,6 +20,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const animationsContent = document.getElementById("animations-content");
   const aboutContent = document.getElementById("about-content");
 
+  // Event listeners for navigation buttons to toggle content visibility
   sketchesButton.addEventListener("click", function () {
     toggleContent(sketchesContent);
     hideContent([animationsContent, artsContent, aboutContent]);
@@ -38,6 +41,7 @@ document.addEventListener("DOMContentLoaded", function() {
     hideContent([sketchesContent, animationsContent, artsContent]);
   });
 
+  // Function to toggle content section visibility
   function toggleContent(content) {
     content.classList.toggle("active");
     if (content.classList.contains("active")) {
@@ -53,6 +57,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }
 
+  // Function to hide content sections
   function hideContent(contents) {
     contents.forEach(content => {
       content.classList.remove("active");
@@ -63,15 +68,16 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   }
 
+  // Language switching functionality
   const languages = [
-    {code: "cs", text: "Portfolio\nSofia Šustová"},
-    {code: "ru", text: "Портфолио\nСофия Шустова"},
-    {code: "es", text: "포트폴리오\n소피아 슈스토바"},
-    {code: "fa", text: "نمونه کارها\nصوفیا شوستوا"},
-    {code: "en", text: "Portfolio\nSofiia Shustova"},
-    {code: "ja", text: "ポートフォリオ\nショフィアシュストワ"},
-    {code: "de", text: "Portfolio\nSofia Schustowa"},
-    {code: "zh", text: "投资组合\n索菲亚舒斯托娃"}
+    { code: "cs", text: "Portfolio\nSofia Šustová" }, // Czech
+    { code: "ru", text: "Портфолио\nСофия Шустова" }, // Russian
+    { code: "es", text: "포트폴리오\n소피아 슈스토바" }, // Korean
+    { code: "fa", text: "نمونه کارها\nصوفیا شوستوا" }, // Persian
+    { code: "en", text: "Portfolio\nSofiia Shustova" }, // English
+    { code: "ja", text: "ポートフォリオ\nショフィアシュストワ" }, // Japanese
+    { code: "de", text: "Portfolio\nSofia Schustowa" }, // German
+    { code: "zh", text: "投资组合\n索菲亚舒斯托娃" } // Chinese
   ];
 
   const header = document.getElementById("portfolio-header");
@@ -81,6 +87,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   let currentLanguageIndex = 0;
 
+  // Function to change the language text
   function changeLanguage() {
     header.classList.remove("fade-in");
     author.classList.remove("fade-in");
@@ -108,17 +115,41 @@ document.addEventListener("DOMContentLoaded", function() {
     }, 500);
   }
 
+  // Change language every 3 seconds
   setInterval(changeLanguage, 3000);
 });
 
+// jQuery document ready function for modal and code verification
+$(document).ready(function(){
+  $("#upload-arrow").click(function(event){
+    event.preventDefault(); // Prevent link default behavior
 
+    // Open the modal window
+    $("#modal").css("display", "block");
+  });
 
+  $(".close").click(function(){
+    // Close the modal window
+    $("#modal").css("display", "none");
+  });
 
+  $("#submit-code").click(function(){
+    var code = $("#code-input").val();
+    // Logic for checking the code phrase
+    if (code === "Я у маменьки творец") {
+      window.location.href = "upload.html";
+    } else {
+      alert("Wrong phrase!");
+    }
+  });
+});
 
+// Initialize and load images from JSON
 function init() {
   $.getJSON("images.json", imagesOut);
 }
 
+// Function to output images based on category
 function imagesOut(data) {
   console.log(data);
   var sketchesOut = '';
@@ -161,6 +192,7 @@ function imagesOut(data) {
   $('#animations-content').html(animationsOut);
 }
 
+// Initialize the page
 $(document).ready(function() {
   init();
 });
