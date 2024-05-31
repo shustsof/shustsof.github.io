@@ -34,19 +34,9 @@ setInterval(changeLanguage, 3000); // Изменяем язык каждые 3 �
 
 
 
-
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.querySelector('form');
     const fileInput = document.getElementById('images');
-
-    // Trigger file input click event when "Update" button is clicked
-    document.getElementById('update_button').addEventListener('click', function (event) {
-        event.preventDefault(); // Prevent default button behavior
-        // Trigger click on file input only if files are not already selected
-        if (fileInput.files.length === 0) {
-            fileInput.click(); // Trigger file input click event
-        }
-    });
 
     form.addEventListener('submit', function (event) {
         event.preventDefault(); // Prevent default form submission
@@ -103,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function updatePortfolio(newEntry) {
-    return fetch('/updatePortfolio', { // Assuming the server endpoint is '/updatePortfolio'
+    return fetch('/updatePortfolio', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

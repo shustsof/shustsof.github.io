@@ -1,0 +1,191 @@
+/* Основные стили */
+* {
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+
+.fade-in {
+    opacity: 1 !important;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f7f7f7;
+}
+
+header, footer {
+    text-align: center;
+    padding: 1rem 0;
+}
+
+footer {
+    background-color: #f7f7f7;
+}
+
+footer a {
+    text-decoration: none;
+}
+
+button {
+    border: none;
+    transition: font-size 0.3s ease;
+    background-color: #f7f7f7;
+    padding: 8px 30px;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 11px;
+    text-shadow: 0 1px 2px #fff;
+    cursor: pointer;
+    margin: 0 auto;
+    display: block;
+}
+
+button:hover {
+    font-size: 16px;
+}
+
+#insta-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+#insta-button img {
+    width: 30px;
+    height: 23px;
+}
+
+.instagram-button img {
+    width: 31px;
+    height: 21px;
+}
+
+.instagram-button {
+    background: none;
+}
+
+#upload-arrow,
+#home {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 9999;
+}
+
+#upload-arrow img,
+#home img {
+    width: 23px;
+    height: 23px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.content {
+    display: none;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.content.active {
+    display: flex;
+    height: auto;
+}
+
+.content p,
+.content h2 {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    margin: 0px;
+}
+
+.card img,
+.card video {
+    max-width: 90%;
+    height: auto;
+    margin: 10px;
+}
+
+.card {
+    width: calc(33.33% - 40px);
+    margin-bottom: 20px;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px #0000004d;
+    overflow: hidden;
+    transition: box-shadow .3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#initial-view {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #f7f7f7;
+    z-index: 10000;
+    transition: all 1s ease;
+}
+
+body.initial-loading #initial-view {
+    opacity: 1;
+}
+
+body.loaded #initial-view {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-100%);
+    transition: transform 1s ease, opacity 1s ease, visibility 1s ease 1s;
+}
+
+body.initial-loading header,
+body.initial-loading nav,
+body.initial-loading main,
+body.initial-loading footer {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease, visibility 1s ease;
+}
+
+body.loaded header,
+body.loaded nav,
+body.loaded main,
+body.loaded footer {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 1s;
+}
+
+.fade-in {
+    animation: fadeIn 2s ease-in-out forwards;
+}
+
+.fade-out {
+    animation: fadeOut 2s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

@@ -1,0 +1,146 @@
+/* Основные стили */
+* {
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f7f7f7;
+}
+
+header, footer {
+    text-align: center;
+    padding: 1rem 0;
+}
+
+footer {
+    background-color: #f7f7f7;
+}
+
+footer a {
+    text-decoration: none;
+}
+
+button {
+    border: none;
+    transition: font-size 0.3s ease;
+    background-color: #f7f7f7;
+    padding: 8px 30px;
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 11px;
+    text-shadow: 0 1px 2px #fff;
+    cursor: pointer;
+    margin: 0 auto;
+    display: block;
+}
+
+button:hover {
+    font-size: 16px;
+}
+
+#insta-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+#insta-button img {
+    width: 30px;
+    height: 23px;
+}
+
+#upload-arrow,
+#home {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 9999;
+}
+
+#upload-arrow img,
+#home img {
+    width: 23px;
+    height: 23px;
+}
+
+.form-group {
+    max-width: 500px;
+    margin: auto;
+    margin-bottom: 30px;
+}
+
+.form-controll {
+    display: block;
+    padding: 8px 16px;
+    width: 100%;
+    font-size: 16px;
+    background-color: rgb(0, 0, 0,0.05);
+    border: 1px solid rgb(0, 0, 0,0.1);
+    color: rgba(0,0,0,0.5);
+    font-weight: 200;
+}
+
+.form-controll:focus {
+    outline: 2px solid rgba(255,255,255,0.5);
+    outline: -webkit-focus-ring-color auto 5px;
+}
+
+.file-area {
+    width: 100%;
+    position: relative;
+}
+
+.file-area input[type=file] {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.file-dummy {
+    width: 100%;
+    padding: 30px;
+    color: rgba(0,0,0,0.5);
+    background: rgb(0, 0, 0,0.05);
+    border: 2px dashed rgb(0, 0, 0,0.1);
+    text-align: center;
+    transition: background 0.3s ease-in-out;
+}
+
+.file-area:hover .file-dummy  {
+    background: rgba(255,255,255);
+}
+
+.file-area input[type=file]:focus + .file-dummy {
+    outline: 2px solid rgba(255,255,255,0.5);
+    outline: -webkit-focus-ring-color auto 5px;
+}
+
+.file-area input[type=file]:valid + .file-dummy {
+    border-color: rgb(153, 50, 204,0.2);
+    background-color: rgb(153, 50, 204,0.07);
+}
+
+.file-area .file-dummy .success {
+    display: none;
+}
+
+.file-area input[type=file]:valid + .file-dummy .success {
+    display: inline-block;
+}
+
+.file-area input[type=file]:valid + .file-dummy .default {
+    display: none;
+}
+

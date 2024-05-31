@@ -1,20 +1,23 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Portfolio</title>
   <link rel="shortcut icon" href="img/png-transparent-cat-computer-icons-dog-pet-cat-cat-like-mammal-animals-text.png">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/index.css">
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="js/app.js"></script>
-
-
+  <script src="server.js"></script>
 </head>
 <body>
-<header>
+<div id="initial-view">
+  <h1 id="portfolio-header_init">Portfolio</h1>
+  <p id="author_init">Sofiia Shustova</p>
+</div>
+
+<header id="main-header">
   <h1 id="portfolio-header">Portfolio</h1>
-  <p id="author">Sofiia Shustova</p> <!-- Добавлен параграф с вашим именем -->
+  <p id="author">Sofiia Shustova</p>
   <button id="insta-button">
     <a id="insta" href="https://www.instagram.com/eericssonn/" target="_blank">
       <img src="img/INSTA.png" alt="Instagram">
@@ -24,7 +27,6 @@
   <a id="upload-arrow" href="upload.html">
     <img src="img/up%5Bload.png" alt="Upload">
   </a>
-
 </header>
 
 <nav>
@@ -35,44 +37,11 @@
 </nav>
 
 <main class="contents">
-  <section id="sketches-content" class="content">
-<!--    <div class="card">-->
-<!--      <img src="sketch.jpg" alt="Описание скетча">-->
-<!--      <p>Описание скетча</p>-->
-<!--      <button class="instagram-button">-->
-<!--        <a href="https://www.instagram.com/sketch" target="_blank">-->
-<!--          <img src="img/INSTA.png" alt="Instagram">-->
-<!--        </a>-->
-<!--      </button>-->
-<!--    </div>-->
-  </section>
-
-  <section id="arts-content" class="content">
-
-  </section>
-
-  <section id="animations-content" class="content">
-<!--    <div class="card">-->
-<!--      <video src="animation.mp4" alt="Описание анимации" controls></video>-->
-<!--      <p>Описание анимации</p>-->
-<!--      <button class="instagram-button">-->
-<!--        <a href="https://www.instagram.com/animation" target="_blank">-->
-<!--          <img src="img/INSTA.png" alt="Instagram">-->
-<!--        </a>-->
-<!--      </button>-->
-<!--    </div>-->
-  </section>
-
-  <section id="about-content" class="content">
-
-  </section>
-
-
-
+  <section id="sketches-content" class="content"></section>
+  <section id="arts-content" class="content"></section>
+  <section id="animations-content" class="content"></section>
+  <section id="about-content" class="content"></section>
 </main>
-<footer>
-
-</footer>
-
+<footer></footer>
 </body>
 </html>
