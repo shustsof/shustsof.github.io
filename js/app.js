@@ -149,6 +149,9 @@ function init() {
   $.getJSON("images.json", imagesOut);
 }
 
+
+
+// Function to output images based on category
 // Function to output images based on category
 function imagesOut(data) {
   console.log(data);
@@ -161,7 +164,7 @@ function imagesOut(data) {
     var card = '<div class="card">';
 
     if (item.category === 'sketch') {
-      card += `<img src="${item.img}" alt="${item.description}">`;
+      card += `<a href="${item.img}" target="_blank"><img src="${item.img}" alt="${item.description}"></a>`;
       card += `<p>${item.description}</p>`;
       card += `<button class="instagram-button">`;
       card += `<a href="${item.insta}" target="_blank"><img src="img/INSTA.png" alt="Instagram"></a>`;
@@ -177,7 +180,7 @@ function imagesOut(data) {
       card += `</div>`;
       animationsOut += card;
     } else if (item.category === 'art') {
-      card += `<img src="${item.img}" alt="${item.description}">`;
+      card += `<a href="${item.img}" target="_blank"><img src="${item.img}" alt="${item.description}"></a>`;
       card += `<p>${item.description}</p>`;
       card += `<button class="instagram-button">`;
       card += `<a href="${item.insta}" target="_blank"><img src="img/INSTA.png" alt="Instagram"></a>`;
@@ -196,3 +199,5 @@ function imagesOut(data) {
 $(document).ready(function() {
   init();
 });
+
+
