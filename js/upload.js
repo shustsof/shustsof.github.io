@@ -27,8 +27,7 @@ function changeLanguage() {
     }, 500); // Добавляем небольшую задержку перед изменением текста, чтобы анимация завершилась
 }
 
-setInterval(changeLanguage, 3000); // Изменяем язык каждые 3 секунды
-
+setInterval(changeLanguage, 3000);
 
 
 
@@ -37,19 +36,61 @@ setInterval(changeLanguage, 3000); // Изменяем язык каждые 3 �
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.querySelector('form');
     const fileInput = document.getElementById('images');
+    const categorySelect = document.getElementById('category');
+    const instaLinkInput = document.getElementById('insta_link');
+    const descriptionInput = document.getElementById('description');
+
+    fileInput.addEventListener('change', function () {
+        const files = Array.from(fileInput.files);
+        const isPNG = files.every(file => file.type === 'image/png');
+        const isMP4 = files.every(file => file.type === 'video/mp4');
+
+        if (!isPNG && !isMP4) {
+            alert('Please select only PNG or MP4 files.');
+            fileInput.value = '';
+            return;
+        }
+
+        // Update category options based on file type
+        categorySelect.innerHTML = '';
+        if (isPNG) {
+            categorySelect.innerHTML = `
+                <option value="" disabled selected>Select a category</option>
+                <option value="sketch">Sketch</option>
+                <option value="art">Art</option>
+            `;
+        } else if (isMP4) {
+            categorySelect.innerHTML = `
+                <option value="" disabled selected>Select a category</option>
+                <option value="animation">Animation</option>
+            `;
+        }
+    });
 
     form.addEventListener('submit', function (event) {
         event.preventDefault(); // Prevent default form submission
 
         // Get form values
-        const insta_link = document.getElementById('insta_link').value;
-        const description = document.getElementById('description').value;
-        const category = document.getElementById('category').value;
+        const insta_link = instaLinkInput.value;
+        const description = descriptionInput.value;
+        const category = categorySelect.value;
 
         // Check if required fields are filled
         if (insta_link === '' || description === '' || category === '') {
             alert('Please fill in all required fields.');
             return; // Stop form submission if any field is empty
+        }
+
+        // Validate Instagram link
+        if (!insta_link.startsWith('https://www.instagram.com/')) {
+            alert('Please enter a valid Instagram link. Example: https://www.instagram.com/...');
+            return;
+        }
+
+        // Validate description length
+        if (description.length > 100) {
+            alert('Description must be 100 characters or less.');
+            return;
         }
 
         // Convert files to base64 strings
@@ -90,20 +131,20 @@ document.addEventListener('DOMContentLoaded', function () {
                 });
         });
     });
-});
 
-function updatePortfolio(newEntry) {
-    return fetch('/updatePortfolio', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(newEntry)
-    })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.json();
-        });
-}
+    function updatePortfolio(newEntry) {
+        return fetch('/updatePortfolio', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(newEntry)
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            });
+    }
+});

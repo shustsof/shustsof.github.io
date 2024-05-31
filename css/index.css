@@ -4,9 +4,12 @@
     font-family: 'Lato', sans-serif;
 }
 
-
 .fade-in {
-    opacity: 1 !important;
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+.fade-out {
+    animation: fadeOut 0.5s ease-in-out forwards;
 }
 
 body {
@@ -173,19 +176,20 @@ body.loaded footer {
     transition-delay: 1s;
 }
 
-.fade-in {
-    animation: fadeIn 2s ease-in-out forwards;
-}
-
-.fade-out {
-    animation: fadeOut 2s ease-in-out forwards;
-}
-
 @keyframes fadeIn {
     from {
         opacity: 0;
     }
     to {
         opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
     }
 }

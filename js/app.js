@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", function() {
   const mainContent = document.querySelector("main");
   const body = document.body;
 
-  // Add event listener to the initial view
   initialView.addEventListener("click", function() {
     body.classList.remove("initial-loading");
     body.classList.add("loaded");
@@ -95,18 +94,19 @@ document.addEventListener("DOMContentLoaded", function() {
       author.textContent = authorText;
       header.classList.add("fade-in");
       author.classList.add("fade-in");
-      header.style.opacity = 1;
-      author.style.opacity = 1;
 
       header_init.textContent = portfolioText;
       author_init.textContent = authorText;
       header_init.classList.add("fade-in");
       author_init.classList.add("fade-in");
+
+      // Ensure elements are visible after changing text
+      header.style.opacity = 1;
+      author.style.opacity = 1;
       header_init.style.opacity = 1;
       author_init.style.opacity = 1;
     }, 500);
   }
-
 
   setInterval(changeLanguage, 3000);
 });
