@@ -143,6 +143,7 @@ nav {
 
 /* Card styles */
 .card {
+    margin:auto;
     width: calc(33.33% - 40px); /* Card width calculation */
     margin-bottom: 20px; /* Margin bottom */
     text-align: center; /* Center aligning text */
@@ -365,11 +366,14 @@ body.loaded footer {
 
 .about-image img {
     width: 100%;
-    max-width: 300px;
+    max-width: 400px;
     border-radius: 50%;
+    margin: auto;
 }
 
 .about-text {
+    margin: auto;
+    text-align: right;
     max-width: 600px;
 }
 
@@ -407,8 +411,10 @@ body.loaded footer {
 
 .additional-image img {
     width: 100%;
-    max-width: 300px;
-    border-radius: 10px;
+    max-width: 350px;
+    border-radius: 50%;
+    margin: auto;
+
 }
 
 .additional-text {
@@ -423,4 +429,38 @@ body.loaded footer {
 .additional-text p {
     font-size: 1.2rem;
     color: #666;
+}
+/* Убедитесь, что секция #more-info не скрыта */
+#more-info {
+    display: flex; /* или block в зависимости от вашей структуры */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden; /* Скрыть изначально */
+    opacity: 0; /* Сделать невидимым изначально */
+    transition: visibility 0s, opacity 0.5s ease; /* Плавный переход для видимости и прозрачности */
+}
+
+/* Класс для активации секции #more-info */
+#more-info.active {
+    visibility: visible; /* Показать секцию */
+    opacity: 1; /* Сделать видимой */
+}
+
+.additional-image img {
+    width: 100%; /* Установите желаемую ширину */
+    height: auto; /* Автоматическая высота для сохранения пропорций */
+    margin-bottom: 20px; /* Отступ снизу */
+}
+
+.additional-text h2,
+.additional-text p {
+    opacity: 0; /* Изначально невидимы */
+    transition: opacity 0.5s ease; /* Плавный переход для прозрачности */
+}
+
+/* Класс для активации текста */
+#more-info.active .additional-text h2,
+#more-info.active .additional-text p {
+    opacity: 1; /* Сделать видимым при активации */
 }

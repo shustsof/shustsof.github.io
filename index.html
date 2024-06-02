@@ -3,42 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <title>Portfolio</title>
-  <!-- Favicon for the page -->
-  <link rel="shortcut icon" href="img/png-transparent-cat-computer-icons-dog-pet-cat-cat-like-mammal-animals-text.png">
-  <!-- Linking the stylesheet for the page -->
   <link rel="stylesheet" href="css/index.css">
-  <!-- jQuery library -->
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-  <!-- JavaScript file for the page -->
   <script src="js/app.js"></script>
 </head>
 <body>
 <div id="initial-view">
-  <!-- Initial portfolio header -->
   <h1 id="portfolio-header_init">Portfolio</h1>
-  <!-- Initial author name display -->
   <p id="author_init">Sofiia Shustova</p>
 </div>
 
 <header id="main-header">
-  <!-- Main portfolio header -->
   <h1 id="portfolio-header">Portfolio</h1>
-  <!-- Main author name display -->
   <p id="author">Sofiia Shustova</p>
-  <!-- Instagram button with a link to the Instagram profile -->
   <button id="insta-button">
     <a id="insta" href="https://www.instagram.com/eericssonn/" target="_blank">
       <img src="img/INSTA.png" alt="Instagram">
     </a>
   </button>
-  <!-- Upload arrow button -->
   <a id="upload-arrow" href="#">
     <img src="img/up%5Bload.png" alt="Upload">
   </a>
 </header>
 
-
-<!-- Navigation buttons for different sections -->
 <nav>
   <button id="sketches-button">Sketches</button>
   <button id="arts-button">Arts</button>
@@ -46,46 +33,43 @@
   <button id="about-button">About</button>
 </nav>
 
-<!-- Main content area with different sections -->
 <main class="contents">
   <section id="sketches-content" class="content"></section>
   <section id="arts-content" class="content"></section>
   <section id="animations-content" class="content"></section>
   <section id="about-content" class="content" style="padding: 50px 0;">
-
     <div class="container">
       <div class="about-content">
         <div class="about-image">
-          <img src="./img/about/nice.jpg" alt="Your Image">
+          <img src="./img/about/NICE.PNG" alt="Your Image">
         </div>
         <div class="about-text">
-          <h2>Hi! I'm [Your Name].</h2>
-          <p>I'm a [profession] with a knack for [skills] who loves helping [target audience] get more [benefit] from their work.</p>
-          <button class="tell-me-more-btn">TELL ME MORE!</button>
+          <h2>Hi!<br>I'm Sofiia.</h2>
+          <p>Originally a humanities scholar, <br> turned into a techie by circumstances, <br>but always an artist at heart.</p>
+          <button id="tell-me-more-btn" class="tell-me-more-btn">MORE</button>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="more-info" style="padding: 50px 0;"class="content">
+  <section id="more-info" class="content" style="display: none; padding: 50px 0;">
     <div class="container">
       <div class="additional-content">
+        <div class="additional-text">
+          <h2>A little more about me</h2>
+          <p>I graduated from an art lyceum in my hometown, but at the time, I didn't realize how much I would miss creativity in my life. Consequently, I took exams in humanities while simultaneously creating commissioned artwork for international clients. Later, when I moved to the Czech Republic, I embraced the idea of a new country meaning a new life, and decided to explore a technical field. This led me to study Multimedia and Virtual Reality Technology at CTU FEE. However, even there, I couldn't find my true calling.<br><br>It was during my second year at university that I realized how much I loved animating, drawing women, and cats. I decided that this passion should become my hobby, my work, and my life.</p>
+        </div>
         <div class="additional-image">
           <img src="./img/about/not_nice.jpg" alt="Another Image">
         </div>
-        <div class="additional-text">
-          <h2>More About Me</h2>
-          <p>Here you can add more details about yourself or your work. This is where the user will scroll to after clicking the "Tell me more" button.</p>
-        </div>
       </div>
     </div>
   </section>
+
 </main>
 
-<!-- Footer of the page -->
 <footer></footer>
 
-<!-- Modal window for displaying images -->
 <div id="image-modal" class="image-modal">
   <div class="image-modal-content">
     <span class="image-modal-close">&times;</span>
@@ -94,16 +78,11 @@
   </div>
 </div>
 
-
-<!-- Modal window for entering a code phrase -->
 <div id="modal" class="modal">
   <div class="modal-content">
-    <!-- Close button for the modal -->
     <span class="close">&times;</span>
     <p>Code phrase:</p>
-    <!-- Input field for the code phrase -->
     <input type="text" id="code-input">
-    <!-- Submit button for the code phrase -->
     <button id="submit-code">Accept</button>
   </div>
 </div>

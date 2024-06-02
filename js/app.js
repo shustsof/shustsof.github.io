@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
   const initialView = document.getElementById("initial-view");
-  const mainContent = document.querySelector("main");
   const body = document.body;
 
   // Event listener to transition from initial view to main content
@@ -19,7 +18,9 @@ document.addEventListener("DOMContentLoaded", function() {
   const artsContent = document.getElementById("arts-content");
   const animationsContent = document.getElementById("animations-content");
   const aboutContent = document.getElementById("about-content");
-  const moreInfo = document.getElementById("more-info");
+  const moreInfoSection = document.getElementById("more-info");
+
+  const tellMeMoreBtn = document.getElementById("tell-me-more-btn");
 
   // Event listeners for navigation buttons to toggle content visibility
   sketchesButton.addEventListener("click", function () {
@@ -42,18 +43,27 @@ document.addEventListener("DOMContentLoaded", function() {
     hideContent([sketchesContent, animationsContent, artsContent]);
   });
 
+  tellMeMoreBtn.addEventListener("click", function() {
+    moreInfoSection.classList.add("active");
+    $('html, body').animate({
+      scrollTop: $(moreInfoSection).offset().top
+    }, 1000); // Время анимации в миллисекундах
+  });
+
+
   // Function to toggle content section visibility
   function toggleContent(content) {
-    content.classList.toggle("active");
     if (content.classList.contains("active")) {
-      content.style.height = content.scrollHeight + "px";
-      content.querySelectorAll("p, h2").forEach(element => {
-        element.style.opacity = 1;
-      });
-    } else {
+      content.classList.remove("active");
       content.style.height = "0";
       content.querySelectorAll("p, h2").forEach(element => {
         element.style.opacity = 0;
+      });
+    } else {
+      content.classList.add("active");
+      content.style.height = content.scrollHeight + "px";
+      content.querySelectorAll("p, h2").forEach(element => {
+        element.style.opacity = 1;
       });
     }
   }
@@ -146,10 +156,10 @@ $(document).ready(function(){
 });
 
 $(document).ready(function() {
-  // Initialize the page and load images from JSON
+  // Инициализация страницы и загрузка изображений из JSON
   init();
 
-  // Function to open the image modal
+  // Функция открытия модального окна изображения
   function openImageModal(imgSrc, captionText) {
     $('#image-modal-img').attr('src', imgSrc);
     $('#image-modal-caption').text(captionText);
@@ -157,7 +167,7 @@ $(document).ready(function() {
     $('#image-modal .image-modal-content').css('animation', 'scaleUp 0.3s ease-in-out');
   }
 
-  // Function to close the image modal
+  // Функция закрытия модального окна изображения
   function closeImageModal() {
     $('#image-modal').css('animation', 'fadeOut 0.5s ease-in-out');
     $('#image-modal').on('animationend', function() {
@@ -167,7 +177,7 @@ $(document).ready(function() {
     });
   }
 
-  // Event listener for image clicks to open the modal
+  // Обработчик события клика по изображению для открытия модального окна
   $('body').on('click', '.card a', function(event) {
     event.preventDefault();
     var imgSrc = $(this).attr('href');
@@ -175,16 +185,24 @@ $(document).ready(function() {
     openImageModal(imgSrc, captionText);
   });
 
-  // Event listener for modal close button
+  // Обработчик события клика для закрытия модального окна
   $('.image-modal-close').click(function() {
     closeImageModal();
   });
 
-  // Event listener for clicking outside the modal content to close it
+  // Обработчик события клика вне содержимого модального окна для закрытия
   $('#image-modal').click(function(event) {
     if ($(event.target).is('#image-modal')) {
       closeImageModal();
     }
+  });
+
+  // Добавьте обработчик события для кнопки "MORE"
+  $('#tell-me-more-btn').click(function() {
+    $('#more-info').fadeIn();
+    $('html, body').animate({
+      scrollTop: $('#more-info').offset().top
+    }, 1000); // Время анимации в миллисекундах
   });
 });
 
@@ -232,7 +250,3 @@ function imagesOut(data) {
   $('#arts-content').html(artsOut);
   $('#animations-content').html(animationsOut);
 }
-// Smooth Scroll for "Tell me more" button
-document.querySelector('.tell-me-more-btn').addEventListener('click', function() {
-  document.getElementById('more-info').scrollIntoView({ behavior: 'smooth' });
-});
