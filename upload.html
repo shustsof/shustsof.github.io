@@ -13,13 +13,13 @@
     <!-- Header title for the portfolio -->
     <h1 id="portfolio-header">Portfolio</h1>
     <!-- Author's name displayed in the header -->
-    <p id="author">Sofiia Shustova</p> <!-- Added a paragraph with your name -->
+    <p id="author">Sofiia Shustova</p>
     <!-- Instagram button with a link to the Instagram profile -->
-    <button id="insta-button">
+    <div id="insta-button">
         <a id="insta" href="https://www.instagram.com/eericssonn/" target="_blank">
             <img src="img/INSTA.png" alt="Instagram">
         </a>
-    </button>
+    </div>
     <!-- Home button with a link to the home page -->
     <a id="home" href="index.html">
         <img src="img/img.png" alt="Home">
@@ -28,12 +28,12 @@
 
 <!-- Form for uploading portfolio items -->
 <form class="upload-form">
-    <h1><strong></strong></h1>
+    <h1 style="visibility: hidden;">Update Your Portfolio</h1>
 
     <!-- File input section for images and videos -->
     <div class="form-group file-area">
         <label for="images">Images <span>PNG or MP4</span></label>
-        <input type="file" name="images" id="images" required="required" multiple="multiple"/>
+        <input type="file" name="images" id="images" required="required" multiple="multiple">
         <div class="file-dummy">
             <!-- Message displayed when files are successfully selected -->
             <div class="success">Great, your files are selected. Keep on.</div>
@@ -45,13 +45,13 @@
     <!-- Input field for Instagram link -->
     <div class="form-group">
         <label for="insta_link">Instagram link </label>
-        <input type="text" name="insta_link" id="insta_link" required="required" class="form-controll"/>
+        <input type="url" name="insta_link" id="insta_link" required="required" class="form-controll" placeholder="Enter Instagram link">
     </div>
 
     <!-- Input field for description -->
     <div class="form-group">
         <label for="description">Description </label>
-        <input type="text" name="description" id="description" required="required" class="form-controll"/>
+        <input type="text" name="description" id="description" required="required" class="form-controll" placeholder="Enter description" autofocus>
     </div>
 
     <!-- Dropdown menu for selecting category -->
@@ -68,8 +68,6 @@
     <!-- Submit button for the form -->
     <button type="submit">Update</button>
 </form>
-
-
 
 <!-- Linking the JavaScript file for form handling -->
 <script src="js/upload.js"></script>

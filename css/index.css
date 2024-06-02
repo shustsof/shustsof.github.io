@@ -468,3 +468,99 @@ body.loaded footer {
 #more-info.active .additional-text p {
     opacity: 1; /* Сделать видимым при активации */
 }
+
+/* Ensure the #more-info section is hidden initially */
+#more-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s ease;
+    margin-top: 20%;
+    margin-bottom: 8%;
+}
+
+/* Class to activate the #more-info section */
+#more-info.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.additional-image img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.additional-text h2,
+.additional-text p {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+/* Class to activate text */
+#more-info.active .additional-text h2,
+#more-info.active .additional-text p {
+    opacity: 1;
+}
+
+/* Advanced Selectors */
+/* Using :nth-child, :last-child, and combinators */
+nav a:nth-child(2n) {
+    color: rgba(255, 0, 0, 0); /* Every second link is red */
+}
+
+.content > .card:last-child {
+    border: 2px solid rgba(0, 0, 255, 0); /* Last card has a blue border */
+}
+
+/* Vendor Prefixes for better compatibility */
+button {
+    -webkit-transition: font-size 0.3s ease; /* Chrome, Safari, and Opera */
+    -moz-transition: font-size 0.3s ease; /* Firefox */
+    -ms-transition: font-size 0.3s ease; /* Internet Explorer 9 */
+    -o-transition: font-size 0.3s ease; /* Opera */
+    transition: font-size 0.3s ease;
+}
+
+/* CSS3 Transformations */
+.card:hover {
+    -webkit-transform: scale(1.05); /* Chrome, Safari, and Opera */
+    -moz-transform: scale(1.05); /* Firefox */
+    -ms-transform: scale(1.05); /* Internet Explorer 9 */
+    -o-transform: scale(1.05); /* Opera */
+    transform: scale(1.05); /* Standard syntax */
+}
+
+/* CSS3 Transitions/Animations */
+button:hover {
+    -webkit-transition: font-size 0.3s ease; /* Chrome, Safari, and Opera */
+    -moz-transition: font-size 0.3s ease; /* Firefox */
+    -ms-transition: font-size 0.3s ease; /* Internet Explorer 9 */
+    -o-transition: font-size 0.3s ease; /* Opera */
+    transition: font-size 0.3s ease;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+    .card {
+        width: calc(50% - 20px); /* Two cards per row */
+    }
+
+    .about-text, .additional-text {
+        margin-left: 0;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        width: 100%; /* One card per row */
+    }
+
+    #insta-button, #upload-arrow, #home {
+        position: static; /* Remove absolute positioning for better mobile layout */
+    }
+}
