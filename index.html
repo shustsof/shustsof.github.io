@@ -51,11 +51,49 @@
   <section id="sketches-content" class="content"></section>
   <section id="arts-content" class="content"></section>
   <section id="animations-content" class="content"></section>
-  <section id="about-content" class="content"></section>
+  <section id="about-content" class="content" style="padding: 50px 0;">
+
+    <div class="container">
+      <div class="about-content">
+        <div class="about-image">
+          <img src="./img/about/nice.jpg" alt="Your Image">
+        </div>
+        <div class="about-text">
+          <h2>Hi! I'm [Your Name].</h2>
+          <p>I'm a [profession] with a knack for [skills] who loves helping [target audience] get more [benefit] from their work.</p>
+          <button class="tell-me-more-btn">TELL ME MORE!</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="more-info" style="padding: 50px 0;"class="content">
+    <div class="container">
+      <div class="additional-content">
+        <div class="additional-image">
+          <img src="./img/about/not_nice.jpg" alt="Another Image">
+        </div>
+        <div class="additional-text">
+          <h2>More About Me</h2>
+          <p>Here you can add more details about yourself or your work. This is where the user will scroll to after clicking the "Tell me more" button.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
 
 <!-- Footer of the page -->
 <footer></footer>
+
+<!-- Modal window for displaying images -->
+<div id="image-modal" class="image-modal">
+  <div class="image-modal-content">
+    <span class="image-modal-close">&times;</span>
+    <img id="image-modal-img" src="" alt="Image">
+    <p id="image-modal-caption"></p>
+  </div>
+</div>
+
 
 <!-- Modal window for entering a code phrase -->
 <div id="modal" class="modal">

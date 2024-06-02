@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const artsContent = document.getElementById("arts-content");
   const animationsContent = document.getElementById("animations-content");
   const aboutContent = document.getElementById("about-content");
+  const moreInfo = document.getElementById("more-info");
 
   // Event listeners for navigation buttons to toggle content visibility
   sketchesButton.addEventListener("click", function () {
@@ -144,17 +145,54 @@ $(document).ready(function(){
   });
 });
 
-// Initialize and load images from JSON
+$(document).ready(function() {
+  // Initialize the page and load images from JSON
+  init();
+
+  // Function to open the image modal
+  function openImageModal(imgSrc, captionText) {
+    $('#image-modal-img').attr('src', imgSrc);
+    $('#image-modal-caption').text(captionText);
+    $('#image-modal').css('display', 'block');
+    $('#image-modal .image-modal-content').css('animation', 'scaleUp 0.3s ease-in-out');
+  }
+
+  // Function to close the image modal
+  function closeImageModal() {
+    $('#image-modal').css('animation', 'fadeOut 0.5s ease-in-out');
+    $('#image-modal').on('animationend', function() {
+      $('#image-modal').css('display', 'none');
+      $('#image-modal').css('animation', ''); // Сброс анимации
+      $('#image-modal').off('animationend'); // Удаление обработчика событий
+    });
+  }
+
+  // Event listener for image clicks to open the modal
+  $('body').on('click', '.card a', function(event) {
+    event.preventDefault();
+    var imgSrc = $(this).attr('href');
+    var captionText = $(this).next('p').text();
+    openImageModal(imgSrc, captionText);
+  });
+
+  // Event listener for modal close button
+  $('.image-modal-close').click(function() {
+    closeImageModal();
+  });
+
+  // Event listener for clicking outside the modal content to close it
+  $('#image-modal').click(function(event) {
+    if ($(event.target).is('#image-modal')) {
+      closeImageModal();
+    }
+  });
+});
+
 function init() {
   $.getJSON("images.json", imagesOut);
 }
 
-
-
-// Function to output images based on category
-// Function to output images based on category
 function imagesOut(data) {
-  console.log(data);
   var sketchesOut = '';
   var artsOut = '';
   var animationsOut = '';
@@ -164,7 +202,7 @@ function imagesOut(data) {
     var card = '<div class="card">';
 
     if (item.category === 'sketch') {
-      card += `<a href="${item.img}" target="_blank"><img src="${item.img}" alt="${item.description}"></a>`;
+      card += `<a href="${item.img}"><img src="${item.img}" alt="${item.description}"></a>`;
       card += `<p>${item.description}</p>`;
       card += `<button class="instagram-button">`;
       card += `<a href="${item.insta}" target="_blank"><img src="img/INSTA.png" alt="Instagram"></a>`;
@@ -180,7 +218,7 @@ function imagesOut(data) {
       card += `</div>`;
       animationsOut += card;
     } else if (item.category === 'art') {
-      card += `<a href="${item.img}" target="_blank"><img src="${item.img}" alt="${item.description}"></a>`;
+      card += `<a href="${item.img}"><img src="${item.img}" alt="${item.description}"></a>`;
       card += `<p>${item.description}</p>`;
       card += `<button class="instagram-button">`;
       card += `<a href="${item.insta}" target="_blank"><img src="img/INSTA.png" alt="Instagram"></a>`;
@@ -194,10 +232,7 @@ function imagesOut(data) {
   $('#arts-content').html(artsOut);
   $('#animations-content').html(animationsOut);
 }
-
-// Initialize the page
-$(document).ready(function() {
-  init();
+// Smooth Scroll for "Tell me more" button
+document.querySelector('.tell-me-more-btn').addEventListener('click', function() {
+  document.getElementById('more-info').scrollIntoView({ behavior: 'smooth' });
 });
-
-
