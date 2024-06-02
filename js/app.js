@@ -25,17 +25,17 @@ document.addEventListener("DOMContentLoaded", function() {
   // Event listeners for navigation buttons to toggle content visibility
   sketchesButton.addEventListener("click", function () {
     toggleContent(sketchesContent);
-    hideContent([animationsContent, artsContent, aboutContent]);
+    hideContent([animationsContent, artsContent, aboutContent, moreInfoSection]);
   });
 
   artsButton.addEventListener("click", function () {
     toggleContent(artsContent);
-    hideContent([sketchesContent, animationsContent, aboutContent]);
+    hideContent([sketchesContent, animationsContent, aboutContent,moreInfoSection]);
   });
 
   animationsButton.addEventListener("click", function () {
     toggleContent(animationsContent);
-    hideContent([sketchesContent, artsContent, aboutContent]);
+    hideContent([sketchesContent, artsContent, aboutContent,moreInfoSection]);
   });
 
   aboutButton.addEventListener("click", function () {
