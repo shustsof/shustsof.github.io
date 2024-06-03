@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="51e30e56-a331-4e96-90fe-7d7c0d8a6f06" name="Changes" comment="only cosmetics">
+    <list default="true" id="51e30e56-a331-4e96-90fe-7d7c0d8a6f06" name="Changes" comment="she really loves makeup">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/upload.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/upload.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +108,7 @@
       <workItem from="1717359410370" duration="9377000" />
       <workItem from="1717368914826" duration="3701000" />
       <workItem from="1717445284329" duration="777000" />
-      <workItem from="1717446680048" duration="1031000" />
+      <workItem from="1717446680048" duration="2556000" />
     </task>
     <task id="LOCAL-00001" summary="no db only js">
       <option name="closed" value="true" />
@@ -190,7 +190,31 @@
       <option name="project" value="LOCAL" />
       <updated>1717372746672</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="she really loves makeup">
+      <option name="closed" value="true" />
+      <created>1717447763823</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1717447763823</updated>
+    </task>
+    <task id="LOCAL-00012" summary="she really loves makeup">
+      <option name="closed" value="true" />
+      <created>1717448985915</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1717448985915</updated>
+    </task>
+    <task id="LOCAL-00013" summary="she really loves makeup">
+      <option name="closed" value="true" />
+      <created>1717449147009</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1717449147009</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -218,7 +242,8 @@
     <MESSAGE value="about section" />
     <MESSAGE value="upload some arts" />
     <MESSAGE value="only cosmetics" />
-    <option name="LAST_COMMIT_MESSAGE" value="only cosmetics" />
+    <MESSAGE value="she really loves makeup" />
+    <option name="LAST_COMMIT_MESSAGE" value="she really loves makeup" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
