@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 "category": category
             };
 
-            updatePortfolio(newEntry)
+            upload(newEntry)
                 .then(() => {
                     window.location.href = 'index.html';
                 })
@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    async function updatePortfolio(newEntry) {
+    async function upload(newEntry) {
         try {
             const response = await fetch('/upload', {
 
