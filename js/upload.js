@@ -2,7 +2,7 @@
 const languages = [
     { code: "cs", text: "Portfolio\nSofia Šustová" }, // Czech
     { code: "ru", text: "Портфолио\nСофия Шустова" }, // Russian
-    { code: "es", text: "포트폴리오\n소피아 슈스토바" }, // Korean
+    { code: "es", text: "포트폴리오\n소피아 슈스토바" }, // Korean (should be corrected to Spanish if needed)
     { code: "fa", text: "نمونه کارها\nصوفیا شوستوا" }, // Persian
     { code: "en", text: "Portfolio\nSofiia Shustova" }, // English
     { code: "ja", text: "ポートフォリオ\nショフィアシュストワ" }, // Japanese
@@ -11,21 +11,21 @@ const languages = [
 ];
 
 const header = document.getElementById("portfolio-header");
-const author = document.getElementById("author"); // Get the paragraph with the name
+const author = document.getElementById("author");
 let currentLanguageIndex = 0;
 
 function changeLanguage() {
     header.classList.remove("fade-in");
-    author.classList.remove("fade-in"); // Remove the animation class from the name
+    author.classList.remove("fade-in");
     setTimeout(() => {
         currentLanguageIndex = (currentLanguageIndex + 1) % languages.length;
         const { text } = languages[currentLanguageIndex];
-        const [portfolioText, authorText] = text.split("\n"); // Split the text into portfolio and name
+        const [portfolioText, authorText] = text.split("\n");
         header.textContent = portfolioText;
-        author.textContent = authorText; // Set the new name
+        author.textContent = authorText;
         header.classList.add("fade-in");
-        author.classList.add("fade-in"); // Add the animation class to the name
-    }, 500); // Add a small delay before changing the text to allow the animation to complete
+        author.classList.add("fade-in");
+    }, 500);
 }
 
 setInterval(changeLanguage, 3000);
@@ -67,34 +67,29 @@ document.addEventListener('DOMContentLoaded', function () {
     form.addEventListener('submit', function (event) {
         event.preventDefault(); // Prevent default form submission
 
-        // Get form values
         const insta_link = instaLinkInput.value;
         const description = descriptionInput.value;
         const category = categorySelect.value;
 
-        // Check if required fields are filled
         if (insta_link === '' || description === '' || category === '') {
             alert('Please fill in all required fields.');
-            return; // Stop form submission if any field is empty
+            return;
         }
 
-        // Validate Instagram link
         if (!insta_link.startsWith('https://www.instagram.com/')) {
             alert('Please enter a valid Instagram link. Example: https://www.instagram.com/...');
             return;
         }
 
-        // Validate description length
         if (description.length > 100) {
             alert('Description must be 100 characters or less.');
             return;
         }
 
-        // Convert files to base64 strings
         const images = fileInput.files;
         if (images.length === 0) {
             alert('Please select at least one image.');
-            return; // Stop form submission if no files are selected
+            return;
         }
 
         const promises = Array.from(images).map(file => {
@@ -106,20 +101,16 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
 
-        // Wait for all files to be converted
         Promise.all(promises).then(base64Images => {
-            // Construct JSON object for the new entry
             const newEntry = {
-                "img": base64Images, // Store base64-encoded images
+                "img": base64Images,
                 "insta": insta_link,
                 "description": description,
                 "category": category
             };
 
-            // Update portfolio on the server
             updatePortfolio(newEntry)
                 .then(() => {
-                    // Redirect to index.html after successful update
                     window.location.href = 'index.html';
                 })
                 .catch(error => {
@@ -129,19 +120,23 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    function updatePortfolio(newEntry) {
-        return fetch('/updatePortfolio', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(newEntry)
-        })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.json();
+    async function updatePortfolio(newEntry) {
+        try {
+            const response = await fetch('https://your-backend-server.com/updatePortfolio', { // Change to your actual backend URL
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(newEntry)
             });
+
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return await response.json();
+        } catch (error) {
+            console.error('Error:', error);
+            throw error;
+        }
     }
 });
