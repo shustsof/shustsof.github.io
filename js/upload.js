@@ -67,29 +67,34 @@ document.addEventListener('DOMContentLoaded', function () {
     form.addEventListener('submit', function (event) {
         event.preventDefault(); // Prevent default form submission
 
+        // Get form values
         const insta_link = instaLinkInput.value;
         const description = descriptionInput.value;
         const category = categorySelect.value;
 
+        // Check if required fields are filled
         if (insta_link === '' || description === '' || category === '') {
             alert('Please fill in all required fields.');
-            return;
+            return; // Stop form submission if any field is empty
         }
 
+        // Validate Instagram link
         if (!insta_link.startsWith('https://www.instagram.com/')) {
             alert('Please enter a valid Instagram link. Example: https://www.instagram.com/...');
             return;
         }
 
+        // Validate description length
         if (description.length > 100) {
             alert('Description must be 100 characters or less.');
             return;
         }
 
+        // Convert files to base64 strings
         const images = fileInput.files;
         if (images.length === 0) {
             alert('Please select at least one image.');
-            return;
+            return; // Stop form submission if no files are selected
         }
 
         const promises = Array.from(images).map(file => {
@@ -101,16 +106,20 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
 
+        // Wait for all files to be converted
         Promise.all(promises).then(base64Images => {
+            // Construct JSON object for the new entry
             const newEntry = {
-                "img": base64Images,
+                "img": base64Images, // Store base64-encoded images
                 "insta": insta_link,
                 "description": description,
                 "category": category
             };
 
+            // Update portfolio on the server
             upload(newEntry)
                 .then(() => {
+                    // Redirect to index.html after successful update
                     window.location.href = 'index.html';
                 })
                 .catch(error => {
@@ -120,26 +129,19 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    async function upload(newEntry) {
-        try {
-            const response = await fetch('/upload', {
-
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(newEntry)
+    function upload(newEntry) {
+        return fetch('/upload', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(newEntry)
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
             });
-
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return await response.json();
-        } catch (error) {
-            console.error('Error:', error);
-            throw error;
-        }
     }
 });
-const cors = require('cors');
-app.use(cors());
