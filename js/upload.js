@@ -120,23 +120,14 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    async function updatePortfolio(newEntry) {
-        try {
-            const response = await fetch('https://your-backend-server.com/updatePortfolio', { // Change to your actual backend URL
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(newEntry)
-            });
+    fetch('/updatePortfolio', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(newEntry)
+    })
 
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return await response.json();
-        } catch (error) {
-            console.error('Error:', error);
-            throw error;
-        }
-    }
 });
+const cors = require('cors');
+app.use(cors());

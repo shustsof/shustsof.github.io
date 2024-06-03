@@ -14,7 +14,7 @@ app.use(express.static(__dirname));
 app.use(bodyParser.json({ limit: '50mb' }));
 
 // Handle request to update the portfolio
-app.post('/updatePortfolio', (req, res) => {
+app.post('/upload', (req, res) => {
     const newEntry = req.body;
 
     // Read the current JSON file
@@ -41,8 +41,7 @@ app.post('/updatePortfolio', (req, res) => {
         });
     });
 });
-
-// Start the server
-app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
+app.use((req, res, next) => {
+    res.setHeader("Permissions-Policy", "interest-cohort=()");
+    next();
 });
