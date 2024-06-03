@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="51e30e56-a331-4e96-90fe-7d7c0d8a6f06" name="Changes" comment="upload some arts">
+    <list default="true" id="51e30e56-a331-4e96-90fe-7d7c0d8a6f06" name="Changes" comment="only cosmetics">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/upload.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/upload.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/up[load.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/upload.html" beforeDir="false" afterPath="$PROJECT_DIR$/upload.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/app.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +106,9 @@
       <workItem from="1717161758215" duration="13862000" />
       <workItem from="1717309880806" duration="4147000" />
       <workItem from="1717359410370" duration="9377000" />
-      <workItem from="1717368914826" duration="3439000" />
+      <workItem from="1717368914826" duration="3701000" />
+      <workItem from="1717445284329" duration="777000" />
+      <workItem from="1717446680048" duration="1031000" />
     </task>
     <task id="LOCAL-00001" summary="no db only js">
       <option name="closed" value="true" />
@@ -184,7 +182,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717368638426</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="only cosmetics">
+      <option name="closed" value="true" />
+      <created>1717372746672</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1717372746672</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -211,7 +217,8 @@
     <MESSAGE value="modal window" />
     <MESSAGE value="about section" />
     <MESSAGE value="upload some arts" />
-    <option name="LAST_COMMIT_MESSAGE" value="upload some arts" />
+    <MESSAGE value="only cosmetics" />
+    <option name="LAST_COMMIT_MESSAGE" value="only cosmetics" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

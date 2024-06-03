@@ -179,6 +179,10 @@ $(document).ready(function() {
 
   // Обработчик события клика по изображению для открытия модального окна
   $('body').on('click', '.card a', function(event) {
+    if ($(this).closest('.instagram-button').length > 0) {
+      // Если клик был на кнопке Instagram, не открывать модальное окно
+      return;
+    }
     event.preventDefault();
     var imgSrc = $(this).attr('href');
     var captionText = $(this).next('p').text();
