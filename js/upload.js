@@ -1,3 +1,4 @@
+// Language switching functionality
 const languages = [
     { code: "cs", text: "Portfolio\nSofia Šustová" }, // Czech
     { code: "ru", text: "Портфолио\nСофия Шустова" }, // Russian
@@ -8,9 +9,9 @@ const languages = [
     { code: "de", text: "Portfolio\nSofia Schustowa" }, // German
     { code: "zh", text: "投资组合\n索菲亚舒斯托娃" } // Chinese
 ];
+
 const header = document.getElementById("portfolio-header");
 const author = document.getElementById("author"); // Get the paragraph with the name
-
 let currentLanguageIndex = 0;
 
 function changeLanguage() {

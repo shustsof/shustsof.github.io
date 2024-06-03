@@ -30,12 +30,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
   artsButton.addEventListener("click", function () {
     toggleContent(artsContent);
-    hideContent([sketchesContent, animationsContent, aboutContent,moreInfoSection]);
+    hideContent([sketchesContent, animationsContent, aboutContent, moreInfoSection]);
   });
 
   animationsButton.addEventListener("click", function () {
     toggleContent(animationsContent);
-    hideContent([sketchesContent, artsContent, aboutContent,moreInfoSection]);
+    hideContent([sketchesContent, artsContent, aboutContent, moreInfoSection]);
   });
 
   aboutButton.addEventListener("click", function () {
@@ -47,9 +47,8 @@ document.addEventListener("DOMContentLoaded", function() {
     moreInfoSection.classList.add("active");
     $('html, body').animate({
       scrollTop: $(moreInfoSection).offset().top
-    }, 1000); // Время анимации в миллисекундах
+    }, 1000); // Animation duration in milliseconds
   });
-
 
   // Function to toggle content section visibility
   function toggleContent(content) {
@@ -156,10 +155,10 @@ $(document).ready(function(){
 });
 
 $(document).ready(function() {
-  // Инициализация страницы и загрузка изображений из JSON
+  // Page initialization and loading images from JSON
   init();
 
-  // Функция открытия модального окна изображения
+  // Function to open the image modal
   function openImageModal(imgSrc, captionText) {
     $('#image-modal-img').attr('src', imgSrc);
     $('#image-modal-caption').text(captionText);
@@ -167,20 +166,20 @@ $(document).ready(function() {
     $('#image-modal .image-modal-content').css('animation', 'scaleUp 0.3s ease-in-out');
   }
 
-  // Функция закрытия модального окна изображения
+  // Function to close the image modal
   function closeImageModal() {
     $('#image-modal').css('animation', 'fadeOut 0.5s ease-in-out');
     $('#image-modal').on('animationend', function() {
       $('#image-modal').css('display', 'none');
-      $('#image-modal').css('animation', ''); // Сброс анимации
-      $('#image-modal').off('animationend'); // Удаление обработчика событий
+      $('#image-modal').css('animation', ''); // Reset animation
+      $('#image-modal').off('animationend'); // Remove event handler
     });
   }
 
-  // Обработчик события клика по изображению для открытия модального окна
+  // Event handler for image click to open modal
   $('body').on('click', '.card a', function(event) {
     if ($(this).closest('.instagram-button').length > 0) {
-      // Если клик был на кнопке Instagram, не открывать модальное окно
+      // If click was on the Instagram button, do not open the modal
       return;
     }
     event.preventDefault();
@@ -189,24 +188,24 @@ $(document).ready(function() {
     openImageModal(imgSrc, captionText);
   });
 
-  // Обработчик события клика для закрытия модального окна
+  // Event handler for close button click to close modal
   $('.image-modal-close').click(function() {
     closeImageModal();
   });
 
-  // Обработчик события клика вне содержимого модального окна для закрытия
+  // Event handler for clicking outside modal content to close modal
   $('#image-modal').click(function(event) {
     if ($(event.target).is('#image-modal')) {
       closeImageModal();
     }
   });
 
-  // Добавьте обработчик события для кнопки "MORE"
+  // Event handler for the "MORE" button
   $('#tell-me-more-btn').click(function() {
     $('#more-info').fadeIn();
     $('html, body').animate({
       scrollTop: $('#more-info').offset().top
-    }, 1000); // Время анимации в миллисекундах
+    }, 1000); // Animation duration in milliseconds
   });
 });
 

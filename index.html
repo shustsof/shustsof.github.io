@@ -5,27 +5,35 @@
   <title>Portfolio</title>
   <!-- Favicon for the page -->
   <link rel="shortcut icon" href="img/png-transparent-cat-computer-icons-dog-pet-cat-cat-like-mammal-animals-text.png">
+  <!-- Linking the stylesheet for the page -->
   <link rel="stylesheet" href="css/index.css">
+  <!-- Linking jQuery library -->
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <!-- Linking the JavaScript file for additional functionality -->
   <script src="js/app.js"></script>
 </head>
 <body>
+<!-- Initial view of the portfolio -->
 <div id="initial-view">
   <h1 id="portfolio-header_init">Portfolio</h1>
   <p id="author_init">Sofiia Shustova</p>
 </div>
 
+<!-- Main header of the portfolio -->
 <header id="main-header">
   <h1 id="portfolio-header">Portfolio</h1>
   <p id="author">Sofiia Shustova</p>
+  <!-- Instagram button with a link to the Instagram profile -->
   <a id="insta-button" href="https://www.instagram.com/eericssonn/" target="_blank">
     <img src="img/INSTA.png" alt="Instagram">
   </a>
+  <!-- Upload button -->
   <a id="upload-arrow" href="#">
     <img src="./img/upload.png" alt="Upload">
   </a>
 </header>
 
+<!-- Navigation buttons for different sections of the portfolio -->
 <nav>
   <button id="sketches-button">Sketches</button>
   <button id="arts-button">Arts</button>
@@ -33,39 +41,50 @@
   <button id="about-button">About</button>
 </nav>
 
+<!-- Main content of the portfolio -->
 <main class="contents">
+  <!-- Sketches section -->
   <section id="sketches-content" class="content">
     <h2 style="visibility: hidden;">Sketches</h2>
   </section>
+  <!-- Arts section -->
   <section id="arts-content" class="content">
     <h2 style="visibility: hidden;">Arts</h2>
   </section>
+  <!-- Animations section -->
   <section id="animations-content" class="content">
     <h2 style="visibility: hidden;">Animations</h2>
   </section>
+  <!-- About section with introductory content -->
   <section id="about-content" class="content">
     <div class="container">
       <div class="about-content">
+        <!-- Image in the About section -->
         <div class="about-image">
           <img src="./img/about/NICE.PNG" alt="My Image">
         </div>
+        <!-- Text in the About section -->
         <div class="about-text">
           <h2>Hi!<br>I'm Sofiia</h2>
           <p>Originally a humanities scholar, <br> turned into a techie by circumstances, <br>but always an artist at heart.</p>
+          <!-- Button to show more information -->
           <button id="tell-me-more-btn" class="tell-me-more-btn">MORE</button>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- More information section, initially hidden -->
   <section id="more-info" class="content" style="display: none; padding: 50px 0;">
     <h2>More Info</h2>
     <div class="container">
       <div class="additional-content">
+        <!-- Additional text about the author -->
         <div class="additional-text">
           <h2>A little more about me</h2>
           <p>I graduated from an art lyceum in my hometown, but at the time, I didn't realize how much I would miss creativity in my life. Consequently, I took exams in humanities while simultaneously creating commissioned artwork for international clients. Later, when I moved to the Czech Republic, I embraced the idea of a new country meaning a new life, and decided to explore a technical field. This led me to study Multimedia and Virtual Reality Technology at CTU FEE. However, even there, I couldn't find my true calling.<br><br>It was during my second year at university that I realized how much I loved animating, drawing women, and cats. I decided that this passion should become my hobby, my work, and my life.</p>
         </div>
+        <!-- Additional image in the More Info section -->
         <div class="additional-image">
           <img src="./img/about/not_nice.jpg" alt="Another Image">
         </div>
@@ -75,8 +94,10 @@
 
 </main>
 
+<!-- Footer of the portfolio page -->
 <footer></footer>
 
+<!-- Modal for displaying images -->
 <div id="image-modal" class="image-modal">
   <div class="image-modal-content">
     <span class="image-modal-close">&times;</span>
@@ -85,6 +106,7 @@
   </div>
 </div>
 
+<!-- Modal for entering a code phrase -->
 <div id="modal" class="modal">
   <div class="modal-content">
     <span class="close">&times;</span>
