@@ -1,9 +1,11 @@
 {
   "name": "kaj_portfolio",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "This project aims to create a two-page portfolio website for admission to an art university. The website includes a portfolio page displaying categorized works such as drawings and animations, and an upload page for adding new works to the site. Access to the upload page is restricted by a secret phrase entered on the index page to ensure privacy.",
+  "main": "app.js",
   "scripts": {
+    "start": "node app.js",
+    "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -12,5 +14,6 @@
   "dependencies": {
     "body-parser": "^1.20.2",
     "express": "^4.19.2"
-  }
+  },
+  "devDependencies": {}
 }
