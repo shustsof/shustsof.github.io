@@ -163,5 +163,132 @@
     "img": "img/comics/IMG_5182.JPG",
     "description": "",
     "category": "comics"
-}
+},
+  "0039": {
+    "img": "img/animace/F51EC6F3-A6D2-4F9F-A1E2-C15B5C2F901E.mov",
+    "description": "",
+    "category": "animations"
+  },"0040": {
+    "img": "img/animace/sofia_1_ test .mp4",
+    "description": "",
+    "category": "animations"
+  },"0041": {
+    "img": "img/animace/IMG_5225.GIF",
+    "description": "",
+    "category": "animation"
+  },"0042": {
+    "img": "img/animace/OutputLarge.gif",
+    "description": "",
+    "category": "animation"
+  },"0043": {
+    "img": "img/animace/IMG_0573.GIF",
+    "description": "",
+    "category": "animation"
+  },
+
+
+  "0044": {
+  "img": "img/illustrace/1.PNG",
+  "description": "",
+  "category": "illustration"
+},
+  "0045": {
+    "img": "img/illustrace/4.jpg",
+    "description": "",
+    "category": "illustration"
+  },
+  "0046": {
+    "img": "img/illustrace/7.PNG",
+    "description": "",
+    "category": "illustration"
+  },
+  "0047": {
+    "img": "img/illustrace/2.PNG",
+    "description": "",
+    "category": "illustration"
+  },
+  "0048": {
+    "img": "img/illustrace/8.PNG",
+    "description": "",
+    "category": "illustration"
+  },
+  "0049": {
+    "img": "img/illustrace/11.png",
+    "description": "",
+    "category": "illustration"
+  },
+  "0050": {
+    "img": "img/illustrace/3.png",
+    "description": "",
+    "category": "illustration"
+  },
+  "0051": {
+    "img": "img/illustrace/10.png",
+    "description": "",
+    "category": "illustration"
+  },
+  "0052": {
+    "img": "img/illustrace/9.PNG",
+    "description": "",
+    "category": "illustration"
+  },
+
+  "0053": {
+    "img": "img/illustrace/6.PNG",
+    "description": "",
+    "category": "illustration"
+  },
+  "0054": {
+    "img": "img/illustrace/13.png",
+    "description": "",
+    "category": "illustration"
+  },
+  "0055": {
+    "img": "img/illustrace/12.png",
+    "description": "",
+    "category": "illustration"
+  },
+
+
+
+  "0057": {
+    "img": "img/illustrace/17.png",
+    "description": "",
+    "category": "illustration"
+  },
+  "0058": {
+    "img": "img/illustrace/16.png",
+    "description": "",
+    "category": "illustration"
+  },
+  "0059": {
+    "img": "img/illustrace/15.JPG",
+    "description": "",
+    "category": "illustration"
+  },
+  "0060": {
+    "img": "img/illustrace/14.JPG",
+    "description": "",
+    "category": "illustration"
+  },
+  "0061": {
+    "img": "img/illustrace/20.JPG",
+    "description": "",
+    "category": "illustration"
+  },
+  "0062": {
+    "img": "img/illustrace/18.jpg",
+    "description": "",
+    "category": "illustration"
+  },
+  "0063": {
+    "img": "img/illustrace/19.png",
+    "description": "",
+    "category": "illustration"
+  },
+  "0064": {
+    "img": "img/illustrace/21.png",
+    "description": "",
+    "category": "illustration"
+  }
 }

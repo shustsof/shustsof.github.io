@@ -255,6 +255,11 @@ function imagesOut(data) {
       card += `<p>${item.description}</p>`;
       card += `</div>`;
       animationsOut += card;
+    }else if (item.category === 'animation') {
+      card += `<img src="${item.img}" alt="${item.description}" controls></img>`;
+      card += `<p>${item.description}</p>`;
+      card += `</div>`;
+      animationsOut += card;
     }
     else if (item.category === 'comics') {
       card += `<a href="${item.img}"><img src="${item.img}" alt="${item.description}"></a>`;
