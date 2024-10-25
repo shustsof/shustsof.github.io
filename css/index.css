@@ -408,7 +408,7 @@ body.loaded footer {
     background-color: rgba(0, 0, 0, 0.18);
 }
 
-/* Additional Content Section Styles */
+/* Стили дополнительного контента */
 .additional-content {
     display: flex;
     align-items: center;
@@ -420,95 +420,65 @@ body.loaded footer {
     max-width: 350px;
     border-radius: 50%;
     margin: auto;
-
+    margin-bottom: 10%; /* Отступ снизу */
 }
 
 .additional-text {
     max-width: 600px;
+    margin: auto;
+    margin-bottom: 10%; /* Отступ снизу */
 }
 
 .additional-text h2 {
     font-size: 2.5rem;
     color: #333;
+    opacity: 0; /* Изначально невидим */
+    transition: opacity 0.5s ease;
 }
 
 .additional-text p {
     font-size: 1.2rem;
     color: #666;
-}
-/* Убедитесь, что секция #more-info не скрыта */
-#more-info {
-    display: flex; /* или block в зависимости от вашей структуры */
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    visibility: hidden; /* Скрыть изначально */
-    opacity: 0; /* Сделать невидимым изначально */
-    transition: visibility 0s, opacity 0.5s ease; /* Плавный переход для видимости и прозрачности */
-    margin-top: 20%;
-    margin-bottom: 8%;
-}
-
-/* Класс для активации секции #more-info */
-#more-info.active {
-    visibility: visible; /* Показать секцию */
-    opacity: 1; /* Сделать видимой */
-}
-
-.additional-image img {
-    width: 100%; /* Установите желаемую ширину */
-    height: auto; /* Автоматическая высота для сохранения пропорций */
-    margin-bottom: 20px; /* Отступ снизу */
-}
-
-.additional-text h2,
-.additional-text p {
-    opacity: 0; /* Изначально невидимы */
-    transition: opacity 0.5s ease; /* Плавный переход для прозрачности */
-}
-
-/* Класс для активации текста */
-#more-info.active .additional-text h2,
-#more-info.active .additional-text p {
-    opacity: 1; /* Сделать видимым при активации */
-}
-
-/* Ensure the #more-info section is hidden initially */
-#more-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 0s, opacity 0.5s ease;
-    margin-top: 20%;
-    margin-bottom: 8%;
-}
-
-/* Class to activate the #more-info section */
-#more-info.active {
-    visibility: visible;
-    opacity: 1;
-}
-
-.additional-image img {
-    width: 100%;
-    height: auto;
-    margin-bottom: 20px;
-}
-
-.additional-text h2,
-.additional-text p {
-    opacity: 0;
+    opacity: 0; /* Изначально невидим */
     transition: opacity 0.5s ease;
 }
 
-/* Class to activate text */
-#more-info.active .additional-text h2,
-#more-info.active .additional-text p {
+/* Основные стили для скрытия #more-info */
+#more-info {
+    display: block; /* Убедитесь, что display установлен на block */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden; /* Изначально скрыто */
+    opacity: 0; /* Изначально прозрачное */
+    transition: visibility 0s, opacity 0.5s ease;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+#more-info.active {
+    visibility: visible; /* Показ при активации */
     opacity: 1;
 }
+
+.additional-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.additional-text h2,
+.additional-text p {
+    opacity: 0; /* Изначально прозрачное */
+    transition: opacity 0.5s ease;
+}
+
+#more-info.active .additional-text h2,
+#more-info.active .additional-text p {
+    opacity: 1; /* Показ текста при активации */
+}
+
+
 
 /* Advanced Selectors */
 /* Using :nth-child, :last-child, and combinators */

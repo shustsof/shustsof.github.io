@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function() {
         content.classList.remove("active");
         content.style.height = "0";
         content.querySelectorAll("p, h2").forEach(element => {
-          element.style.opacity = 0;
+
         });
       }
     });
@@ -131,15 +131,20 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   }
 
-  if (tellMeMoreBtn) {
-    tellMeMoreBtn.addEventListener("click", function() {
-      moreInfoSection.classList.add("active");
-      moreInfoSection.style.display = "block";
-      $('html, body').animate({
-        scrollTop: $(moreInfoSection).offset().top
-      }, 1000);
-    });
-  }
+  document.getElementById("tell-me-more-btn").addEventListener("click", function() {
+    const moreInfoSection = document.getElementById("more-info");
+
+    if (!moreInfoSection.classList.contains("active")) {
+      moreInfoSection.classList.add("active"); // Добавляем класс активного состояния
+    }
+
+    // Прокрутка к секции плавно
+    $('html, body').animate({
+      scrollTop: $(moreInfoSection).offset().top
+    }, 1000);
+  });
+
+
 
   // Language switching functionality
   const languages = [
