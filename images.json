@@ -1,6 +1,20 @@
 {
   "0001": {
     "img": "img/animace/IMG_4899.MP4",
-    "description": "The Tangerine Thief<br>This animation was created as a semester project during my first semester at the technical university",
+    "description": "The Tangerine Thief<br>This animation was created as a semester project during technical university",
     "category": "animations"
-  }}
+  },
+  "0002": {
+    "img": "img/sketch/digital/IMG_2431.JPG",
+    "description": "",
+    "category": "digital"
+  },"0003": {
+    "img": "img/sketch/digital/IMG_5142.PNG",
+    "description": "",
+    "category": "digital"
+  },"0004": {
+    "img": "img/sketch/digital/IMG_5144.PNG",
+    "description": "",
+    "category": "digital"
+  }
+}
