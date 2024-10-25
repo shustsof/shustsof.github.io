@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", function() {
   if (animationsButton) {
     animationsButton.addEventListener("click", function() {
       toggleContent(animationsContent);
-      hideContent([sketchesContent, comicsContent, illustraceContent, traditionalContent, aboutContent, moreInfoSection]);
+      hideContent([pencilContent, digitalContent, inkContent,penButton,sketchesContent, comicsContent, illustraceContent, traditionalContent, aboutContent, moreInfoSection]);
     });
   }
 
@@ -106,28 +106,28 @@ document.addEventListener("DOMContentLoaded", function() {
   if (comicsButton) {
     comicsButton.addEventListener("click", function() {
       toggleContent(comicsContent);
-      hideContent([animationsContent, sketchesContent, illustraceContent, traditionalContent, aboutContent, moreInfoSection]);
+      hideContent([animatpencilContent, digitalContent, inkContent,penButton,ionsContent, sketchesContent, illustraceContent, traditionalContent, aboutContent, moreInfoSection]);
     });
   }
 
   if (illustraceButton) {
     illustraceButton.addEventListener("click", function() {
       toggleContent(illustraceContent);
-      hideContent([animationsContent, sketchesContent, comicsContent, traditionalContent, aboutContent, moreInfoSection]);
+      hideContent([pencilContent, digitalContent, inkContent,penButton,animationsContent, sketchesContent, comicsContent, traditionalContent, aboutContent, moreInfoSection]);
     });
   }
 
   if (traditionalButton) {
     traditionalButton.addEventListener("click", function() {
       toggleContent(traditionalContent);
-      hideContent([animationsContent, sketchesContent, comicsContent, illustraceContent, aboutContent, moreInfoSection]);
+      hideContent([pencilContent, digitalContent, inkContent,penButton,animationsContent, sketchesContent, comicsContent, illustraceContent, aboutContent, moreInfoSection]);
     });
   }
 
   if (aboutButton) {
     aboutButton.addEventListener("click", function() {
       toggleContent(aboutContent);
-      hideContent([sketchesContent, animationsContent, comicsContent, illustraceContent, traditionalContent, moreInfoSection]);
+      hideContent([pencilContent, digitalContent, inkContent,penButton,sketchesContent, animationsContent, comicsContent, illustraceContent, traditionalContent, moreInfoSection]);
     });
   }
 

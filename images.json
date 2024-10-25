@@ -1,20 +1,167 @@
 {
   "0001": {
     "img": "img/animace/IMG_4899.MP4",
-    "description": "The Tangerine Thief<br>This animation was created as a semester project during technical university",
+    "description": "",
     "category": "animations"
   },
   "0002": {
     "img": "img/sketch/digital/IMG_2431.JPG",
     "description": "",
     "category": "digital"
-  },"0003": {
+  },
+  "0003": {
     "img": "img/sketch/digital/IMG_5142.PNG",
     "description": "",
     "category": "digital"
-  },"0004": {
+  },
+  "0004": {
     "img": "img/sketch/digital/IMG_5144.PNG",
     "description": "",
     "category": "digital"
-  }
+  },
+  "0005": {
+    "img": "img/sketch/karandash/IMG_5026.png",
+    "description": "",
+    "category": "pencil"
+  },
+  "0006": {
+    "img": "img/sketch/karandash/IMG_5024.png",
+    "description": "",
+    "category": "pencil"
+  },"0007": {
+  "img": "img/sketch/karandash/IMG_5025.png",
+  "description": "",
+  "category": "pencil"
+  },"0008": {
+    "img": "img/sketch/karandash/img20241023_15191141.png",
+    "description": "",
+    "category": "pencil"
+  },"0009": {
+    "img": "img/sketch/karandash/img20241023_15195686.png",
+    "description": "",
+    "category": "pencil"
+  },"0010": {
+    "img": "img/sketch/karandash/img20241023_15212916.png",
+    "description": "",
+    "category": "pencil"
+  },"0011": {
+  "img": "img/sketch/karandash/6.png",
+  "description": "",
+  "category": "pencil"
+
+  },"0012": {
+    "img": "img/sketch/karandash/img20241023_15230714.png",
+    "description": "",
+    "category": "pencil"
+  },"0013": {
+  "img": "img/sketch/karandash/12.png",
+  "description": "",
+  "category": "pencil"
+
+  },"0014": {
+
+  "img": "img/sketch/karandash/img20241023_15182191.png",
+  "description": "",
+  "category": "pencil"
+  },"0015": {
+
+  "img": "img/sketch/karandash/img20241023_15242567.png",
+  "description": "",
+  "category": "pencil"
+  },"0016": {
+  "img": "img/sketch/karandash/img20241023_15264225.png",
+  "description": "",
+  "category": "pencil"
+},"0017": {
+
+  "img": "img/sketch/karandash/img20241023_15220829.png",
+  "description": "",
+  "category": "pencil"
+},"0018": {
+  "img": "img/sketch/karandash/img20241023_15234639.png",
+  "description": "",
+  "category": "pencil"
+},
+  "0019": {
+    "img": "img/sketch/ruchka/13.png",
+    "description": "",
+    "category": "pen"
+},"0020": {
+    "img": "img/sketch/ruchka/4.png",
+    "description": "",
+    "category": "pen"
+},"0021": {
+    "img": "img/sketch/ruchka/1.png",
+    "description": "",
+    "category": "pen"
+},"0022": {
+    "img": "img/sketch/ruchka/14.png",
+    "description": "",
+    "category": "pen"
+},"0023": {
+    "img": "img/sketch/ruchka/11.png",
+    "description": "",
+    "category": "pen"
+},"0024": {
+    "img": "img/sketch/ruchka/5.png",
+    "description": "",
+    "category": "pen"
+},"0025": {
+    "img": "img/sketch/ruchka/10.png",
+    "description": "",
+    "category": "pen"
+},"0026": {
+    "img": "img/sketch/tush/8.png",
+    "description": "",
+    "category": "ink"
+},"0027": {
+    "img": "img/sketch/tush/10.PNG",
+    "description": "",
+    "category": "ink"
+},"0028": {
+    "img": "img/sketch/tush/11.png",
+    "description": "",
+    "category": "ink"
+},"0029": {
+    "img": "img/sketch/tush/7.png",
+    "description": "",
+    "category": "ink"
+},"0030": {
+  "img": "img/sketch/tush/6.png",
+  "description": "",
+  "category": "ink"
+}
+,"0031": {
+    "img": "img/sketch/tush/9.png",
+    "description": "",
+    "category": "ink"
+},"0032": {
+    "img": "img/traditional/IMG_5160.PNG",
+    "description": "",
+    "category": "traditional"
+},"0033": {
+    "img": "img/traditional/IMG_5093.JPG",
+    "description": "",
+    "category": "traditional"
+},"0034": {
+    "img": "img/traditional/IMG_5159.PNG",
+    "description": "",
+    "category": "traditional"
+},"0035": {
+    "img": "img/traditional/IMG_5092.JPG",
+    "description": "",
+    "category": "traditional"
+},"0036": {
+    "img": "img/comics/comicsans-1.png",
+    "description": "",
+    "category": "comics"
+},"0037": {
+    "img": "img/comics/IMG_5181.JPG",
+    "description": "",
+    "category": "comics"
+},"0038": {
+    "img": "img/comics/IMG_5182.JPG",
+    "description": "",
+    "category": "comics"
+}
 }
