@@ -13,6 +13,7 @@
   <script src="js/app.js"></script>
 </head>
 <body>
+
 <!-- Initial view of the portfolio -->
 <div id="initial-view">
   <h1 id="portfolio-header_init">Portfolio</h1>
@@ -32,25 +33,41 @@
 
 <!-- Navigation buttons for different sections of the portfolio -->
 <nav>
-  <button id="sketches-button">Sketches</button>
-  <button id="arts-button">Arts</button>
-  <button id="animations-button">Animations</button>
+  <button id="animace-button">Animation</button>
+  <button id="comics-button">Comics</button>
+  <button id="illustrace-button">Illustration</button>
+  <div class="dropdown">
+    <button id="sketch-button">Sketch</button>
+    <div class="dropdown-content">
+      <button id="digital-button" class="dropdown-item" data-subcategory="digital">Digital</button>
+      <button id="pencil-button" class="dropdown-item" data-subcategory="pencil">Pencil</button>
+      <button id="pen-button" class="dropdown-item" data-subcategory="pen">Pen</button>
+      <button id="ink-button" class="dropdown-item" data-subcategory="ink">Ink</button>
+    </div>
+  </div>
+  <button id="traditional-button">Traditional</button>
   <button id="about-button">About</button>
 </nav>
 
 <!-- Main content of the portfolio -->
 <main class="contents">
-  <!-- Sketches section -->
   <section id="sketches-content" class="content">
     <h2 style="visibility: hidden;">Sketches</h2>
   </section>
-  <!-- Arts section -->
   <section id="arts-content" class="content">
     <h2 style="visibility: hidden;">Arts</h2>
   </section>
-  <!-- Animations section -->
   <section id="animations-content" class="content">
     <h2 style="visibility: hidden;">Animations</h2>
+  </section>
+  <section id="comics-content" class="content">
+    <h2 style="visibility: hidden;">Comics</h2>
+  </section>
+  <section id="illustrace-content" class="content">
+    <h2 style="visibility: hidden;">Illustrace</h2>
+  </section>
+  <section id="traditional-content" class="content">
+    <h2 style="visibility: hidden;">Traditional</h2>
   </section>
   <!-- About section with introductory content -->
   <section id="about-content" class="content">
@@ -79,8 +96,9 @@
         <!-- Additional text about the author -->
         <div class="additional-text">
           <h2>A little more about me</h2>
-          <p>I graduated from an art lyceum in my hometown, but at the time, I didn't realize how much I would miss creativity in my life. Consequently, I took exams in humanities while simultaneously creating commissioned artwork for international clients. Later, when I moved to the Czech Republic, I embraced the idea of a new country meaning a new life, and decided to explore a technical field. This led me to study Multimedia and Virtual Reality Technology at CTU FEE. However, even there, I couldn't find my true calling.<br><br>It was during my second year at university that I realized how much I loved animating, drawing women, and cats. I decided that this passion should become my hobby, my work, and my life.</p>
-        </div>
+         <p>I graduated from an art lyceum in my hometown, but at the time, I didn't realize how much I would miss creativity in my life. Consequently, I took exams in humanities while simultaneously creating commissioned artwork for international clients.<br/><br/>Later, when I moved to the Czech Republic, I embraced the idea of a new country meaning a new life, and decided to explore a technical field. This led me to study Multimedia and Virtual Reality Technology at CTU FEE. However, even there, I couldn't find my true calling.
+
+           <br/><br/>It was during my second year at university that I realized how much I loved animating, drawing women and cats. I decided that this passion should become my hobby, my work, and my life.</p></div>
         <!-- Additional image in the More Info section -->
         <div class="additional-image">
           <img src="./img/about/not_nice.jpg" alt="Another Image">

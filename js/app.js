@@ -9,33 +9,66 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
   // Get buttons and content sections for navigation
-  const sketchesButton = document.getElementById("sketches-button");
-  const artsButton = document.getElementById("arts-button");
-  const animationsButton = document.getElementById("animations-button");
+  const sketchesButton = document.getElementById("sketch-button");
+  const comicsButton = document.getElementById("comics-button");
+  const illustraceButton = document.getElementById("illustrace-button");
+  const animationsButton = document.getElementById("animace-button");
+  const traditionalButton = document.getElementById("traditional-button");
   const aboutButton = document.getElementById("about-button");
+const digitalButton = document.getElementById("digital-button");
+const pencilButton = document.getElementById("pencil-button");
+const penButton = document.getElementById("pen-button");
+const inkButton = document.getElementById("ink-button");
 
   const sketchesContent = document.getElementById("sketches-content");
-  const artsContent = document.getElementById("arts-content");
+  const comicsContent = document.getElementById("comics-content");
+  const illustraceContent = document.getElementById("illustrace-content");
   const animationsContent = document.getElementById("animations-content");
+  const traditionalContent = document.getElementById("traditional-content");
+  const digitalContent = document.getElementById("digital-content");
+  const pencilContent = document.getElementById("pencil-content");
+  const penContent = document.getElementById("pen-content");
+  const inkContent = document.getElementById("ink-content");
+
+
   const aboutContent = document.getElementById("about-content");
   const moreInfoSection = document.getElementById("more-info");
 
   const tellMeMoreBtn = document.getElementById("tell-me-more-btn");
 
   // Event listeners for navigation buttons to toggle content visibility
-  sketchesButton.addEventListener("click", function () {
-    toggleContent(sketchesContent);
-    hideContent([animationsContent, artsContent, aboutContent, moreInfoSection]);
-  });
-
-  artsButton.addEventListener("click", function () {
-    toggleContent(artsContent);
-    hideContent([sketchesContent, animationsContent, aboutContent, moreInfoSection]);
-  });
-
   animationsButton.addEventListener("click", function () {
     toggleContent(animationsContent);
-    hideContent([sketchesContent, artsContent, aboutContent, moreInfoSection]);
+    hideContent([sketchesContent,comicsContent,illustraceContent,traditionalContent,aboutContent,moreInfoSection]);
+  });
+
+  digitalButton.addEventListener("click", function () {
+    toggleContent(digitalContent);
+    hideContent([pencilContent,penContent,inkContent,animationsContent,comicsContent,illustraceContent,traditionalContent,aboutContent,moreInfoSection]);
+  });pencilButton.addEventListener("click", function () {
+    toggleContent(pencilContent);
+    hideContent([digitalContent,penContent,inkContent,animationsContent,comicsContent,illustraceContent,traditionalContent,aboutContent,moreInfoSection]);
+  });penButton.addEventListener("click", function () {
+    toggleContent(penContent);
+    hideContent([pencilContent,digitalButton,inkContent,animationsContent,comicsContent,illustraceContent,traditionalContent,aboutContent,moreInfoSection]);
+  });inkButton.addEventListener("click", function () {
+    toggleContent(inkContent);
+    hideContent([pencilContent,digitalButton,penContent,animationsContent,comicsContent,illustraceContent,traditionalContent,aboutContent,moreInfoSection]);
+  });
+
+  comicsButton.addEventListener("click", function () {
+    toggleContent(comicsContent);
+    hideContent([animationsContent,sketchesContent,illustraceContent,traditionalContent,aboutContent,moreInfoSection]);
+  });
+
+  illustraceButton.addEventListener("click", function () {
+    toggleContent(illustraceContent);
+    hideContent([animationsContent,sketchesContent,comicsContent,traditionalContent,aboutContent,moreInfoSection]);
+  });
+
+  traditionalButton.addEventListener("click", function () {
+    toggleContent(traditionalContent);
+    hideContent([animationsContent,sketchesContent,comicsContent,illustraceContent,aboutContent,moreInfoSection]);
   });
 
   aboutButton.addEventListener("click", function () {
@@ -45,9 +78,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
   tellMeMoreBtn.addEventListener("click", function() {
     moreInfoSection.classList.add("active");
+    moreInfoSection.style.display = "block"; // Устанавливаем display в block для отображения секции
     $('html, body').animate({
       scrollTop: $(moreInfoSection).offset().top
-    }, 1000); // Animation duration in milliseconds
+    }, 1000); // Длительность анимации в миллисекундах
   });
 
   // Function to toggle content section visibility
@@ -129,30 +163,7 @@ document.addEventListener("DOMContentLoaded", function() {
   setInterval(changeLanguage, 3000);
 });
 
-// jQuery document ready function for modal and code verification
-$(document).ready(function(){
-  $("#upload-arrow").click(function(event){
-    event.preventDefault(); // Prevent link default behavior
 
-    // Open the modal window
-    $("#modal").css("display", "block");
-  });
-
-  $(".close").click(function(){
-    // Close the modal window
-    $("#modal").css("display", "none");
-  });
-
-  $("#submit-code").click(function(){
-    var code = $("#code-input").val();
-    // Logic for checking the code phrase
-    if (code === "Я у маменьки творец") {
-      window.location.href = "upload.html";
-    } else {
-      alert("Wrong phrase!");
-    }
-  });
-});
 
 $(document).ready(function() {
   // Page initialization and loading images from JSON
@@ -230,7 +241,7 @@ function imagesOut(data) {
       card += `</button>`;
       card += `</div>`;
       sketchesOut += card;
-    } else if (item.category === 'animation') {
+    } else if (item.category === 'animations') {
       card += `<video src="${item.img}" alt="${item.description}" controls></video>`;
       card += `<p>${item.description}</p>`;
       card += `<button class="instagram-button">`;
