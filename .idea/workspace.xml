@@ -4,50 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="51e30e56-a331-4e96-90fe-7d7c0d8a6f06" name="Changes" comment="she really loves makeup">
-      <change afterPath="$PROJECT_DIR$/img/illustrace/1.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/illustrace/10.PNG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/illustrace/11.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/illustrace/12.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/illustrace/13.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/illustrace/14.JPG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/illustrace/15.JPG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/illustrace/16.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/illustrace/17.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/illustrace/18.JPG" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/illustrace/19.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/illustrace/20.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/illustrace/21.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/illustrace/4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/illustrace/6.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/illustrace/7.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/illustrace/8.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/img/illustrace/9.PNG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images.json" beforeDir="false" afterPath="$PROJECT_DIR$/images.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/illustrace/2.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/illustrace/2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/illustrace/3.png" beforeDir="false" afterPath="$PROJECT_DIR$/img/illustrace/3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/illustrace/5324D67F-756B-433C-AB95-8271BBB4FDD0.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/illustrace/ESRDTZUHIJKOL.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/illustrace/ETERNITY (03) копия.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/illustrace/Free Branding Postcard Mockup копия.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/illustrace/Free Floating Postcard Mockup PSD копия.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/illustrace/HZH.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/illustrace/IMG_0054.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/illustrace/IMG_0560.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/illustrace/IMG_0639.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/illustrace/IMG_5139.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/illustrace/IMG_5174.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/illustrace/IMG_5184.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/illustrace/IMG_5185.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/illustrace/IMG_5186.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/illustrace/IMG_5188.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/illustrace/Urban Poster Mockup.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/illustrace/conicsans-poster-1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/illustrace/img20240925_15223262.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/img/illustrace/postcard mockup копия.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/app.js" afterDir="false" />
-    </list>
+    <list default="true" id="51e30e56-a331-4e96-90fe-7d7c0d8a6f06" name="Changes" comment="she really loves makeup" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -154,7 +111,7 @@
       <workItem from="1718013993332" duration="304000" />
       <workItem from="1723405966773" duration="2017000" />
       <workItem from="1729848301700" duration="17848000" />
-      <workItem from="1729879766372" duration="6155000" />
+      <workItem from="1729879766372" duration="6492000" />
     </task>
     <task id="LOCAL-00001" summary="no db only js">
       <option name="closed" value="true" />
@@ -420,7 +377,23 @@
       <option name="project" value="LOCAL" />
       <updated>1729885692666</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="she really loves makeup">
+      <option name="closed" value="true" />
+      <created>1729887792466</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1729887792466</updated>
+    </task>
+    <task id="LOCAL-00035" summary="she really loves makeup">
+      <option name="closed" value="true" />
+      <created>1729888029211</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1729888029211</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
