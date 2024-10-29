@@ -286,5 +286,9 @@
     "img": "img/illustrace/21.png",
     "description": "",
     "category": "illustration"
+  },"0065": {
+    "img": "img/animace/comics.gif",
+    "description": "",
+    "category": "comics"
   }
 }

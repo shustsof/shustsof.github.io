@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="51e30e56-a331-4e96-90fe-7d7c0d8a6f06" name="Changes" comment="she really loves makeup" />
+    <list default="true" id="51e30e56-a331-4e96-90fe-7d7c0d8a6f06" name="Changes" comment="she really loves makeup">
+      <change afterPath="$PROJECT_DIR$/img/animace/comics.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images.json" beforeDir="false" afterPath="$PROJECT_DIR$/images.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -70,6 +74,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\sofii\Documents\kaj_portfolio\img\animace" />
       <recent name="C:\Users\sofii\Documents\kaj_portfolio\img\illustrace" />
       <recent name="C:\Users\sofii\Documents\kaj_portfolio" />
       <recent name="$PROJECT_DIR$/js" />
@@ -112,6 +117,8 @@
       <workItem from="1723405966773" duration="2017000" />
       <workItem from="1729848301700" duration="17848000" />
       <workItem from="1729879766372" duration="6492000" />
+      <workItem from="1729928412563" duration="236000" />
+      <workItem from="1730232523862" duration="711000" />
     </task>
     <task id="LOCAL-00001" summary="no db only js">
       <option name="closed" value="true" />
@@ -393,7 +400,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729888029211</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="she really loves makeup">
+      <option name="closed" value="true" />
+      <created>1729928482896</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1729928482896</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
