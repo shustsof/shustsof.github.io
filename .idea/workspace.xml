@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="51e30e56-a331-4e96-90fe-7d7c0d8a6f06" name="Changes" comment="she really loves makeup">
-      <change afterPath="$PROJECT_DIR$/img/animace/comics.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images.json" beforeDir="false" afterPath="$PROJECT_DIR$/images.json" afterDir="false" />
-    </list>
+    <list default="true" id="51e30e56-a331-4e96-90fe-7d7c0d8a6f06" name="Changes" comment="she really loves makeup" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -118,7 +114,7 @@
       <workItem from="1729848301700" duration="17848000" />
       <workItem from="1729879766372" duration="6492000" />
       <workItem from="1729928412563" duration="236000" />
-      <workItem from="1730232523862" duration="711000" />
+      <workItem from="1730232523862" duration="1198000" />
     </task>
     <task id="LOCAL-00001" summary="no db only js">
       <option name="closed" value="true" />
@@ -408,7 +404,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729928482896</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="she really loves makeup">
+      <option name="closed" value="true" />
+      <created>1730233378820</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1730233378820</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
