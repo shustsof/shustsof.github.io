@@ -152,15 +152,15 @@
     "description": "",
     "category": "traditional"
 },"0036": {
-    "img": "img/comics/comicsans-1.png",
+    "img": "img/comics/MEITU_20241030_144126127.jpg",
     "description": "",
     "category": "comics"
 },"0037": {
-    "img": "img/comics/IMG_5181.JPG",
+    "img": "img/comics/comicsans-1.png",
     "description": "",
     "category": "comics"
 },"0038": {
-    "img": "img/comics/IMG_5182.JPG",
+    "img": "img/animace/comics.gif",
     "description": "",
     "category": "comics"
 },
@@ -287,8 +287,12 @@
     "description": "",
     "category": "illustration"
   },"0065": {
-    "img": "img/animace/comics.gif",
+    "img": "img/comics/IMG_5181.JPG",
     "description": "",
     "category": "comics"
-  }
+  }, "0066": {
+    "img": "img/comics/IMG_5182.JPG",
+    "description": "",
+    "category": "comics"
+  } 
 }
