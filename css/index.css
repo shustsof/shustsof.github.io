@@ -310,7 +310,7 @@ body.loaded footer {
     padding: 20px;
     border: 1px solid #888;
     
-    max-width: 850px;
+    max-width: 1000px;
     background-color: #fff;
     animation: scaleUp 0.3s ease-in-out;
 }
